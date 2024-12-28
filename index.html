@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+
+
+
+ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_fmt yuv420p output.mp4
+
+-->
+<html>
+
+<head>
+	<title>Home | David Barsoum</title>
+	<link rel="icon" href="logo.png">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="title" content="David Barsoum">
+	<meta name="description" content="Robotics Engineering Major at Olin College of Engineering" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!--
+					
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="projects/logo.svg" alt="" /></span><span class="title">David Barsoum</span>
+					</a>
+				-->
+
+				<!-- Nav 
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+				 -->
+
+			</div>
+		</header>
+
+		<!-- Menu 
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#" onclick='window.open("projects/resume/resume.pdf");return false;'>Resume</a></li>
+
+				<li><a href="projects/Formula/formula.html">Olin Electric Motorsports</a></li>
+				<li><a href="projects/Rocketry/rocketry.html">Model Rocket Avionics</a></li>
+				<li><a href="projects/Regolith/regolith.html">Regolith FDM Printer</a></li>
+				<li><a href="projects/SpaceX/spacex.html">SpaceX</a></li>
+
+				<li><a href="projects/Lamp/lamp.html">Lamp</a></li>
+				<li><a href="projects/Tile_placer/tile_placer.html">Un-tiled</a></li>
+				<li><a href="projects/CNC_Box/CNC_box.html">CNC Box</a></li>
+
+				<li><a href="projects/LANL/lanl.html">Orbit Determination</a></li>
+				<li><a href="projects/balancer/balancer.html">Vibration Balancer</a></li>
+				<li><a href="projects/Diffuser/diffuser.html">Trubojet Diffuser</a></li>
+
+				<li><a href="projects/Hopper/hopper.html">Hopper</a></li>
+
+			</ul>
+		</nav>
+		-->
+
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<header>
+					<div class="project" id="view1">
+						<h1>David Barsoum</h1>
+
+						<span class="image thumbnail">
+							<img src="david.jpg" alt="David Barsoum" />
+						</span>
+						<!-- Education and Location -->
+						<div class="info-text">
+							<p class="education">Robotics at Olin College & Entrepeneurship at Babson</p>
+							<p class="location">
+								<i class="fas fa-globe-americas"></i> Massachusetts, USA
+							</p>
+						</div>
+
+						<!-- Social Media Buttons -->
+						<div class="social-buttons">
+							<a href="https://www.linkedin.com/in/davidmbarsoum" target="_blank"
+								class="social-button linkedin">
+								<i class="fab fa-linkedin"></i>
+							</a>
+							<a href="mailto:dbarsoum@olin.edu" class="social-button email">
+								<i class="fas fa-envelope"></i>
+							</a>
+							<a href="https://github.com/flipper-slipper" target="_blank" class="social-button github">
+								<i class="fab fa-github"></i>
+							</a>
+						</div>
+
+						<div class="profile-content">
+							<p style="padding-top: 0.8rem">
+								I am a robotics engineering student at Olin College of Engineering located outside
+								Boston. I am interested in embedded systems, mechanical design, and mathematical
+								modeling. Check out my projects below!
+
+								<br>
+								<br>
+
+								View my <a href="./projects/resume/resume.pdf" target="_blank"">resume</a>.
+							</p>
+						</div>
+					</div>
+				</header>
+				<h2 style="justify-content: center;">Projects</h2>
+
+				
+				<section class="tiles" id="projects-grid">
+					
+				</section>
+
+
+			</div>
+		</div>
+
+		
+
+		<section class="certificates-section">
+			<center>
+				<h2>Math Papers</h2>
+			</center>
+
+			<div class="certificates-grid" id="papers-grid">
+				<!-- Cards will be generated here -->
+			</div>
+		</section>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="social-links">
+					<a href="https://linkedin.com/in/davidmbarsoum" target="_blank" aria-label="LinkedIn">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a href="mailto:your.dbarsoum@olin.edu" aria-label="Email">
+						<i class="far fa-envelope"></i>
+					</a>
+					<a href="https://github.com/flipper-slipper" target="_blank" aria-label="GitHub">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+				<ul class="copyright">
+					<li>&copy; 2024 David Barsoum. All rights reserved. Adapted from rjansens.com.</li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+
+		window.onload = function () {
+			setTimeout(function () {
+				console.log('Page is loaded');
+				document.getElementById('view1').classList.add('fade-in');
+
+			}, 100);
+
+		};
+	</script>
+
+	<script src="/assets/js/papers.js"></script>
+	<script src="/assets/js/projects.js"></script>
+
+</body>
+
+</html>
