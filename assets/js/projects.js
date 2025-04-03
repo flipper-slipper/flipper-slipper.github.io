@@ -13,9 +13,16 @@ const projects = [
     },
     {
         title: "Mams SISO",
-        thumbnail: "projects/SISO/hopper_pic01.png",
+        thumbnail: "projects/SISO/pic03.png",
         page: "../../projects/SISO/siso.html",
         description: "Digital Sign In/Out System",
+    },
+
+    {
+        title: "Evolv Technology",
+        thumbnail: "projects/evolv/pic01.png",
+        page: "../../projects/evolv/evolv.html",
+        description: "Summer 2024 Internship",
     },
 ];
 
