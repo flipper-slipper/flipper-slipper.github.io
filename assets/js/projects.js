@@ -6,16 +6,16 @@ const projects = [
         description: "Biomechanical hopping machine",
     },
     {
-        title: "Hopper",
-        thumbnail: "projects/Hopper/hopper_pic01.png",
-        page: "../../projects/Hopper/hopper.html",
-        description: "Biomechanical hopping machine",
+        title: "Frisbee Launcher",
+        thumbnail: "projects/Frisbee/pic01.jpg",
+        page: "../../projects/Frisbee/frisbee.html",
+        description: "Assistive frisbee launcher",
     },
     {
-        title: "Hopper",
-        thumbnail: "projects/Hopper/hopper_pic01.png",
-        page: "../../projects/Hopper/hopper.html",
-        description: "Biomechanical hopping machine",
+        title: "Mams SISO",
+        thumbnail: "projects/SISO/hopper_pic01.png",
+        page: "../../projects/SISO/siso.html",
+        description: "Digital Sign In/Out System",
     },
 ];
 
