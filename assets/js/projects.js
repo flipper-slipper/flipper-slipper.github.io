@@ -24,6 +24,12 @@ const projects = [
         page: "../../projects/evolv/evolv.html",
         description: "Summer 2024 Internship",
     },
+    {
+        title: "UMass Health Navigation App",
+        thumbnail: "projects/umass/pic01.png",
+        page: "../../projects/umass/umass.html",
+        description: "Mobile App development for UMass Health",
+    },
 ];
 
 
