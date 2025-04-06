@@ -233,14 +233,15 @@ input, select, textarea {
 	}
 
 	h1 {
-		color: #585858;
+		color: #474547; /* Royal blue */
 		font-size: 2.75em;
-		font-weight: 200;
+		font-weight: bold; /* Bold font */
 		line-height: 1.3;
 		margin: 0 0 0.2em 0;
 		letter-spacing: -0.035em;
-		font-family: "Public Sans", serif;;
+		font-family: "Roboto", sans-serif; /* Clean, modern web font */
 	}
+	
 
 		h1 a {
 			color: inherit;
@@ -2840,11 +2841,14 @@ input, select, textarea {
 				width: 100%;
 				border-radius: 4px;
 				overflow: hidden;
+				height: 300px;
 			}
 
 				.tiles article > .image img {
 					display: block;
 					width: 100%;
+					object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center;
 				}
 
 				.tiles article > .image:before {
