@@ -30,6 +30,18 @@ const projects = [
         page: "../../projects/umass/umass.html",
         description: "Mobile App development for UMass Health",
     },
+    {
+        title: "RC Airplane & Joystick",
+        thumbnail: "projects/plane/pic01.png",
+        page: "../../projects/plane/plane.html",
+        description: "Guillow's Cessna 170 RC Conversion",
+    },
+    {
+        title: "Steam Engine Restoration",
+        thumbnail: "projects/steam_engine/pic01.png",
+        page: "../../projects/steam_engine/steam_engine.html",
+        description: "Meccano Steam Engine Restoration",
+    },
 ];
 
 
