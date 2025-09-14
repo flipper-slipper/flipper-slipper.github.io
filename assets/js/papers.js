@@ -1,39 +1,44 @@
 // First, define your data
-const papers = [
+window.papers = [
     {
         title: "Dandelion Populations",
         url: "papers/himcm2023.pdf",
         description: "Math modeling paper written for 2023 HiMCM challenge",
         tags: ["USA Outstanding Winner (1st/967)", "NCTM Award"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        category: "paper"
     },
     {
         title: "Land Use Analysis",
         url: "papers/immc2023.pdf",
         description: "Math modeling paper written for 2023 IMMC challenge",
         tags: ["Intl. Meritorious (Top 6)"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        category: "paper"
     },
     {
         title: "Honeybee Populations",
         url: "/papers/himcm2022.pdf",
         description: "Math modeling paper written for 2022 HiMCM challenge",
         tags: ["USA Finalist (Top 6%)"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        category: "paper"
     },
     {
         title: "E-Bike Demand",
         url: "/papers/mathworks2023.pdf",
         description: "Math modeling paper written for 2022 M3 Modeling challenge",
         tags: ["2nd Round Selection"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        category: "paper"
     },
     {
         title: "Forest Fires",
         url: "/papers/modsim_project3.pdf",
         description: "Math modeling paper written for ModSim class",
         tags: [],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        category: "paper"
     },
 ];
 
@@ -72,7 +77,7 @@ function createCard(paper) {
 // Finally, your render function and event listener
 function renderPapers() {
     const container = document.getElementById('papers-grid');
-    container.innerHTML = papers.map(paper => createCard(paper)).join('');
+    container.innerHTML = window.papers.map(paper => createCard(paper)).join('');
 }
 
 document.addEventListener('DOMContentLoaded', renderPapers);

@@ -124,72 +124,78 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 						</div>
 					</div>
 				</header>
-				<h2 style="justify-content: center;">Projects</h2>
 
-				
-				<section class="tiles" id="projects-grid">
-					
-				</section>
+								<h2 style="justify-content: center;">Projects</h2>
+								<!-- Filter Bar -->
+								<div class="filter-bar" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem;">
+									<button class="filter-btn" data-filter="all">All</button>
+									<button class="filter-btn" data-filter="project">Projects</button>
+									<button class="filter-btn" data-filter="internship">Internships</button>
+									<button class="filter-btn" data-filter="paper">Papers</button>
+								</div>
 
+								<section class="tiles" id="projects-grid">
+								</section>
+
+
+						</div>
+					</div>
+
+
+
+					<section class="certificates-section">
+						<center>
+							<h2>Math Papers</h2>
+						</center>
+
+						<div class="certificates-grid" id="papers-grid">
+							<!-- Cards will be generated here -->
+						</div>
+					</section>
+
+
+					<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<div class="social-links">
+								<a href="https://linkedin.com/in/davidmbarsoum" target="_blank" aria-label="LinkedIn">
+									<i class="fab fa-linkedin"></i>
+								</a>
+								<a href="mailto:your.dbarsoum@olin.edu" aria-label="Email">
+									<i class="far fa-envelope"></i>
+								</a>
+								<a href="https://github.com/flipper-slipper" target="_blank" aria-label="GitHub">
+									<i class="fab fa-github"></i>
+								</a>
+							</div>
+							<ul class="copyright">
+								<li>&copy; 2024 David Barsoum. All rights reserved. Adapted from rjansens.com.</li>
+							</ul>
+						</div>
+					</footer>
 
 			</div>
-		</div>
 
-		
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
 
-		<section class="certificates-section">
-			<center>
-				<h2>Math Papers</h2>
-			</center>
+				window.onload = function () {
+					setTimeout(function () {
+						console.log('Page is loaded');
+						document.getElementById('view1').classList.add('fade-in');
 
-			<div class="certificates-grid" id="papers-grid">
-				<!-- Cards will be generated here -->
-			</div>
-		</section>
+					}, 100);
 
+				};
+			</script>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="inner">
-				<div class="social-links">
-					<a href="https://linkedin.com/in/davidmbarsoum" target="_blank" aria-label="LinkedIn">
-						<i class="fab fa-linkedin"></i>
-					</a>
-					<a href="mailto:your.dbarsoum@olin.edu" aria-label="Email">
-						<i class="far fa-envelope"></i>
-					</a>
-					<a href="https://github.com/flipper-slipper" target="_blank" aria-label="GitHub">
-						<i class="fab fa-github"></i>
-					</a>
-				</div>
-				<ul class="copyright">
-					<li>&copy; 2024 David Barsoum. All rights reserved. Adapted from rjansens.com.</li>
-				</ul>
-			</div>
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script>
-
-		window.onload = function () {
-			setTimeout(function () {
-				console.log('Page is loaded');
-				document.getElementById('view1').classList.add('fade-in');
-
-			}, 100);
-
-		};
-	</script>
-
-	<script src="/assets/js/papers.js"></script>
-	<script src="/assets/js/projects.js"></script>
+			<script src="/assets/js/papers.js"></script>
+			<script src="/assets/js/projects.js"></script>
 
 </body>
 
