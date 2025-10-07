@@ -301,6 +301,17 @@ h2, h3, h4, h5, h6 {
 	margin-bottom: 0.35em;
 }
 
+/* Tighten spacing for Math Papers header specifically */
+#papers h2 {
+    margin-bottom: 0.15em;
+}
+
+/* Ensure no extra top margin between header and papers grid */
+#papers h2 + .certificates-grid {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 /* Ensure filter has no extra top margin when following a header */
 h2 + .projects-filter {
 	margin-top: 0;
@@ -3830,7 +3841,7 @@ h2 + .projects-filter {
 
 /* Social Media Buttons Styles */
 .social-buttons {
-    margin: 1rem 0;
+    margin: 1rem 0 3rem 0;
 }
 
 .social-button {
@@ -3845,11 +3856,11 @@ h2 + .projects-filter {
 }
 
 .social-button i {
-    font-size: 28px;
+    font-size: 22px;
     display: flex;        /* Added display flex */
     align-items: center;  /* Centers icon vertically */
     justify-content: center; /* Centers icon horizontally */
-	padding: 0px
+    padding: 0px
 }
 
 .social-button:hover {
