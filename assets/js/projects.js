@@ -7,6 +7,13 @@ const projects = [
         type: "project",
     },
     {
+        title: "ROS2 FSM Robot",
+        thumbnail: "projects/ros_fsm/pic01.png",
+        page: "../../projects/ros_fsm/ros_fsm.html",
+        description: "Finite State Machine controlling wall follow, teleop, and avoidance",
+        type: "project",
+    },
+    {
         title: "Frisbee Launcher",
         thumbnail: "projects/Frisbee/pic01.png",
         page: "../../projects/Frisbee/frisbee.html",
