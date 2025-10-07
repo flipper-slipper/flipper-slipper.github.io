@@ -45,15 +45,12 @@ function createCard(paper) {
         </svg>`;
 
     return `
-        <div class="project-card">
+        <div class="project-card" onclick="window.open('${paper.url}', '_blank')">
             <div class="card-header">
                 <div class="card-header-content">
                     <div class="card-title-wrapper">
                         <h3 class="card-title">
-                            <a href="${paper.url}" target="_blank">
-                                ${paper.title}
-                                <span class="status-indicator"></span>
-                            </a>
+                            ${paper.title}
                             ${paper.hasProductionIcon ? productionIcon : ''}
                         </h3>
                     </div>

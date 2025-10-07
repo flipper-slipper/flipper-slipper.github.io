@@ -1,6 +1,6 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 /*
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
@@ -81,19 +81,7 @@ input, select, textarea {
 	appearance: none;
 }
 
-.project{
-	opacity: 0;
-	transform: translateY(100px);
-	transition: opacity 0.5s ease-out;
-	transition: transform 0.5s ease-out;
-	
-}
-
-.project.fade-in{
-	opacity: 1;
-	transform: translateY(0px);
-
-}
+/* Landing page animations removed */
 
 
 
@@ -179,7 +167,7 @@ input, select, textarea {
 
 /* Type */
 
-	body, input, select, textarea {
+body, input, select, textarea {
 		color: #000000;
 		font-family: "Public Sans", 'Helvetica', sans-serif;
 		font-size: 16pt;
@@ -232,14 +220,14 @@ input, select, textarea {
 		font-family: 'Public Sans';
 	}
 
-	h1 {
-		color: #474547; /* Royal blue */
-		font-size: 2.75em;
-		font-weight: bold; /* Bold font */
+h1 {
+		color: #000000;
+		font-size: 2em; /* Match section headers */
+		font-weight: 700; /* Bold */
 		line-height: 1.3;
 		margin: 0 0 0.2em 0;
 		letter-spacing: -0.035em;
-		font-family: "Roboto", sans-serif; /* Clean, modern web font */
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 	
 
@@ -264,13 +252,25 @@ input, select, textarea {
 
 		}
 
-	h2, h3, h4, h5, h6 {
-		font-weight: 200;
+h2, h3, h4, h5, h6 {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 700;
+		color: #000000;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
 		text-transform: none;
 		letter-spacing: 0;
 	}
+
+/* Tighten spacing for Projects header specifically */
+.projects-heading {
+	margin-bottom: 0.35em;
+}
+
+/* Ensure filter has no extra top margin when following a header */
+h2 + .projects-filter {
+	margin-top: 0;
+}
 
 		h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
@@ -2808,27 +2808,29 @@ input, select, textarea {
 
 /* Tiles */
 
-	.tiles {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		position: relative;
-		margin: -2.5em 0 0 -2.5em;
-	}
+		.tiles {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			position: relative;
+			margin: -1.5em 0 0 -1.5em;
+		}
 
 		.tiles article {
-			-moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease;
-			-webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease;
-			-ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease;
-			transition: transform 0.25s ease, opacity 0.25s ease;
+			-moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+			-webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+			-ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+			transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 			position: relative;
-			width: calc(33.33333% - 2.5em);
-			margin: 2.5em 0 0 2.5em;
+			width: calc(33.33333% - 1.5em);
+			margin: 1.5em 0 0 1.5em;
+			border-radius: 4px;
+			box-shadow: 0 0 0 1.67px #404040;
 		}
 
 			.tiles article > .image {
@@ -2841,7 +2843,7 @@ input, select, textarea {
 				width: 100%;
 				border-radius: 4px;
 				overflow: hidden;
-				height: 300px;
+				height: 220px;
 			}
 
 				.tiles article > .image img {
@@ -2890,7 +2892,7 @@ input, select, textarea {
 					z-index: 2;
 				}
 
-			.tiles article > a {
+				.tiles article > a {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -2919,34 +2921,42 @@ input, select, textarea {
 				padding: 1em;
 				border-radius: 4px;
 				border-bottom: 0;
-				color: #ffffff00;
+					color: #ffffff00; /* fully transparent initial text */
 				text-align: center;
 				text-decoration: none;
 				z-index: 3;
 			}
+
+					/* Ensure tile text inherits overlay color so it's hidden until hover */
+					.tiles article > a h2,
+					.tiles article > a .content,
+					.tiles article > a .content p {
+						color: inherit;
+					}
 
 				.tiles article > a > :last-child {
 					margin: 0;
 				}
 
 				.tiles article > a:hover {
-					color: #ffffff !important;
+					color: #ffffff !important; /* original white overlay text on hover */
 				}
 
 				.tiles article > a h2 {
 					margin: 0;
+					font-size: 0.9em;
 				}
 
 				.tiles article > a .content {
-					-moz-transition: max-height 0.25s ease, opacity 0.25s ease;
-					-webkit-transition: max-height 0.25s ease, opacity 0.25s ease;
-					-ms-transition: max-height 0.25s ease, opacity 0.25s ease;
-					transition: max-height 0.25s ease, opacity 0.25s ease;
+					-moz-transition: opacity 0.2s ease;
+					-webkit-transition: opacity 0.2s ease;
+					-ms-transition: opacity 0.2s ease;
+					transition: opacity 0.2s ease;
 					width: 100%;
-					max-height: 0;
-					line-height: 1.5;
+					line-height: 1.4;
 					margin-top: 0.35em;
 					opacity: 0;
+					font-size: 0.85em;
 				}
 
 					.tiles article > a .content > :last-child {
@@ -2957,41 +2967,37 @@ input, select, textarea {
 				background-color: #ffffff00;
 			}
 
-			body:not(.is-touch) .tiles article:hover > .image {
-				-moz-transform: scale(1.1);
-				-webkit-transform: scale(1.1);
-				-ms-transform: scale(1.1);
-				transform: scale(1.1);
+            body:not(.is-touch) .tiles article:hover > .image {
+                -moz-transform: none;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none;
+            }
+
+			body:not(.is-touch) .tiles article:hover > .image:before {
+				background-color: #22202b;
+				opacity: 0.9;
 			}
 
-				body:not(.is-touch) .tiles article:hover > .image:before {
-					background-color: #22202b;
-					opacity: 0.9;
-				}
+			body:not(.is-touch) .tiles article:hover {
+				box-shadow: 0 0 0 2.5px #202020;
+			}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
 					opacity: 0;
 				}
 
 			body:not(.is-touch) .tiles article:hover .content {
-				max-height: 15em;
 				opacity: 1;
 			}
 
 		* + .tiles {
-			margin-top: 2em;
+			margin-top: 0.5em;
 		}
 
-		body.is-preload .tiles article {
-			-moz-transform: scale(0.9);
-			-webkit-transform: scale(0.9);
-			-ms-transform: scale(0.9);
-			transform: scale(0.9);
-			opacity: 0;
-		}
+		/* Landing page animations removed */
 
 		body.is-touch .tiles article .content {
-			max-height: 15em;
 			opacity: 1;
 		}
 
@@ -3011,12 +3017,12 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			.tiles {
-				margin: -2.5em 0 0 -2.5em;
+				margin: -1.5em 0 0 -1.5em;
 			}
 
 				.tiles article {
-					width: calc(50% - 2.5em);
-					margin: 2.5em 0 0 2.5em;
+					width: calc(33.33333% - 1.5em) !important;
+					margin: 1.5em 0 0 1.5em;
 				}
 
 		}
@@ -3024,12 +3030,12 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			.tiles {
-				margin: -1.25em 0 0 -1.25em;
+				margin: -1.5em 0 0 -1.5em;
 			}
 
 				.tiles article {
-					width: calc(50% - 1.25em);
-					margin: 1.25em 0 0 1.25em;
+					width: calc(33.33333% - 1.5em) !important;
+					margin: 1.5em 0 0 1.5em;
 				}
 
 					.tiles article:hover > .image {
@@ -3044,12 +3050,12 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			.tiles {
-				margin: 0;
+				margin: -1.5em 0 0 -1.5em;
 			}
 
 				.tiles article {
-					width: 100%;
-					margin: 1.25em 0 0 0;
+					width: calc(33.33333% - 1.5em) !important;
+					margin: 1.5em 0 0 1.5em;
 				}
 
 		}
@@ -3057,7 +3063,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 2em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -3440,7 +3446,7 @@ input, select, textarea {
 
 	#wrapper > * > .inner {
 		width: 100%;
-		max-width: 68em;
+		max-width: 55em;
 		margin: 0 auto;
 		padding: 0 2.5em;
 	}
@@ -3463,18 +3469,42 @@ input, select, textarea {
     --secondary-text: #4b5563;
 }
 
+/* FORCE FIXED CARD SIZES - OVERRIDE ALL RESPONSIVE BEHAVIOR */
+.tiles article {
+    width: 300px !important;
+    margin: 1.5em 0 0 1.5em !important;
+    flex-shrink: 0 !important;
+}
+
+.certificates-grid > .project-card {
+    width: 300px !important;
+    margin: 1.5em 0 0 1.5em !important;
+    flex-shrink: 0 !important;
+}
+
+.tiles {
+    justify-content: flex-start !important;
+}
+
+.certificates-grid {
+    justify-content: flex-start !important;
+}
+
 /* Card base styles */
 .project-card {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 2px solid var(--muted-color);
+    border: 1.67px solid #404040;
     padding: 0.75rem;
-    transition: box-shadow 0.3s ease-in-out;
-    max-width: 350px;
-    margin: 0 auto; /* Center individual cards within their grid cells */
-    width: 100%; /* Ensure cards take full width up to max-width */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    max-width: none; /* Remove max-width constraint for math papers */
+    margin: 0; /* Remove auto centering */
+    width: 100%; /* Take full width of grid cell */
 	border-radius: 10px;
+    position: relative; /* Ensure stable positioning */
+    min-height: 200px; /* Fixed height to prevent layout shifts */
+    cursor: pointer; /* Add pointer cursor to indicate clickability */
 }
 
 .project-card .card-title {
@@ -3485,7 +3515,21 @@ input, select, textarea {
 
 
 .project-card:hover {
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.15);
+    border: 2.5px solid #202020;
+    background-color: #404040;
+    color: #ffffff;
+    transform: none;
+}
+
+.project-card:hover .card-title,
+.project-card:hover .card-description {
+    color: #ffffff;
+}
+
+.project-card:hover .badge {
+    color: #ffffff;
+    background-color: #404040;
+    border: 1px solid #ffffff;
 }
 
 /* Card header styles */
@@ -3563,6 +3607,10 @@ input, select, textarea {
 /* Content area */
 .card-content {
     margin-top: auto;
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
 }
 
 /* Tags styles */
@@ -3572,6 +3620,7 @@ input, select, textarea {
     flex-wrap: wrap;
     gap: 0.25rem;
 	font-weight: bold;
+    position: relative; /* Prevent movement */
 }
 
 .badge {
@@ -3590,13 +3639,25 @@ input, select, textarea {
 }
 
 /* Grid layout */
+/* Make Math Papers cards use the same sizing as project tiles */
 .certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    max-width: 1200px; /* Set a max-width to control the overall width */
-    margin: 0 auto; /* Center the grid container */
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+    margin: -1.5em 0 0 -1.5em;
+    padding: 0; /* align with tiles */
+}
+
+.certificates-grid > .project-card {
+    width: calc(33.33333% - 1.5em);
+    margin: 1.5em 0 0 1.5em;
+    max-width: none; /* Remove the max-width constraint */
 }
 
 /* Section styles */
@@ -3607,12 +3668,90 @@ input, select, textarea {
     margin: 1rem auto; /* Center horizontally and add vertical spacing */
 }
 
+/* Project Filter Buttons */
+.projects-filter {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Reduce spacing between Projects header and filter buttons */
+h2 + .projects-filter {
+    margin-top: 0.25rem;
+}
+
+.filter-btn {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: lowercase;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    height: 2rem;
+    padding: 0 0.75rem;
+    border-radius: 8px; /* rectangular with rounded corners */
+    border: 1px solid #d1d5db; /* gray-300 */
+    background: #ffffff;
+    color: #374151; /* gray-700 */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.filter-btn:hover {
+    background: #f9fafb; /* gray-50 */
+    border-color: #cbd5e1; /* gray-300/400 */
+}
+
+.filter-btn.is-active {
+    background: #1118270D; /* subtle shaded background */
+    border-color: #11182733;
+    color: #111827; /* gray-900 */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+}
+
 /* Print media queries */
 @media print {
     .certificates-grid {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
-        max-width: 100%; /* Allow full width in print */
+        max-width: 100%;
+    }
+}
+
+/* Responsive behavior mirroring .tiles */
+@media screen and (max-width: 1280px) {
+    .certificates-grid > .project-card {
+        width: calc(33.33333% - 1.25em);
+        margin: 1.25em 0 0 1.25em;
+    }
+    .certificates-grid { margin: -1.25em 0 0 -1.25em; }
+}
+
+@media screen and (max-width: 980px) {
+    .certificates-grid { margin: -1.5em 0 0 -1.5em; }
+    .certificates-grid > .project-card {
+        width: calc(33.33333% - 1.5em) !important;
+        margin: 1.5em 0 0 1.5em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .certificates-grid { margin: -1.5em 0 0 -1.5em; }
+    .certificates-grid > .project-card {
+        width: calc(33.33333% - 1.5em) !important;
+        margin: 1.5em 0 0 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .certificates-grid { margin: -1.5em 0 0 -1.5em; }
+    .certificates-grid > .project-card {
+        width: calc(33.33333% - 1.5em) !important;
+        margin: 1.5em 0 0 1.5em;
     }
 }
 
@@ -3667,6 +3806,10 @@ input, select, textarea {
 .profile-content p {
     flex: 1;
     margin-right: 20px;
+    font-family: inherit;
+    font-size: 0.95em;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 
@@ -3678,7 +3821,9 @@ input, select, textarea {
 
 .info-text p {
     margin: 5px 0;
-    font-size: 1.1em;
+    font-size: 0.95em;
+    font-family: inherit;
+    font-weight: 400;
     color: #333;
 }
 
@@ -3687,6 +3832,82 @@ input, select, textarea {
     color: #2196F3;  /* Blue color for the globe icon */
 }
 
+.location,
+.location a {
+    font-family: inherit;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
 .education {
     font-weight: 400;
+}
+
+/* Header layout: image on right spanning full height of content */
+#view1 {
+    position: relative;
+}
+
+#view1 .image.thumbnail {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    float: none;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-100px);
+}
+
+#view1 .image.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ensure text content doesn't overlap with image */
+#view1 h1,
+#view1 .info-text,
+#view1 .social-buttons,
+#view1 .profile-content {
+    margin-right: calc(25% + 1rem + 100px);
+}
+
+/* Responsive: fallback to original behavior on small screens */
+@media screen and (max-width: 980px) {
+    #view1 .image.thumbnail {
+        position: static;
+        width: 50%;
+        height: auto;
+        float: right;
+        padding: 0 0.5em 1em 1.5em;
+        margin: 0;
+    }
+    
+    #view1 .image.thumbnail img {
+        height: auto;
+    }
+    
+    #view1 h1,
+    #view1 .info-text,
+    #view1 .social-buttons,
+    #view1 .profile-content {
+        margin-right: 0;
+    }
+}
+
+/* Ensure projects section starts below profile section */
+.projects-heading {
+    clear: both;
+    margin-top: 2rem;
+}
+
+.projects-filter {
+    clear: both;
+}
+
+.tiles {
+    clear: both;
 }
