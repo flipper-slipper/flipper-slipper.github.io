@@ -148,9 +148,12 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
-		background: #ffffff;
-	}
+body {
+	background: #ffffff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
 
 
 
@@ -2849,7 +2852,7 @@ h2 + .projects-filter {
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
 			position: relative;
-			margin: -1.5em 0 0 -1.5em;
+			margin: 0 -1em 2rem -1em; /* Moderate negative margin to align with content, add bottom margin */
 		}
 
 		.tiles article {
@@ -2858,10 +2861,10 @@ h2 + .projects-filter {
 			-ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 			transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 			position: relative;
-			width: calc(33.33333% - 1.5em);
-			margin: 1.5em 0 0 1.5em;
-			border-radius: 4px;
-			box-shadow: 0 0 0 1.67px #404040;
+			width: 33.33333%; /* Remove margin calculations for touching cards */
+			margin: 0; /* Remove all margins so cards touch */
+			border-radius: 0; /* Remove border radius for square corners */
+			box-shadow: none; /* Remove border/shadow */
 		}
 
 			.tiles article > .image {
@@ -2872,7 +2875,7 @@ h2 + .projects-filter {
 				position: relative;
 				display: block;
 				width: 100%;
-				border-radius: 4px;
+				border-radius: 0; /* Remove border radius for square corners */
 				overflow: hidden;
 				height: 220px;
 			}
@@ -2881,7 +2884,8 @@ h2 + .projects-filter {
 					display: block;
 					width: 100%;
 					object-fit: cover; /* Ensures the image covers the area without distortion */
-    object-position: center;
+					object-position: center;
+					border-radius: 0; /* Remove border radius for square corners */
 				}
 
 				.tiles article > .image:before {
@@ -3011,12 +3015,12 @@ h2 + .projects-filter {
             }
 
 			body:not(.is-touch) .tiles article:hover > .image:before {
-				background-color: #22202b;
+				background-color: #696969;
 				opacity: 0.9;
 			}
 
 			body:not(.is-touch) .tiles article:hover {
-				box-shadow: 0 0 0 2.5px #202020;
+				box-shadow: none; /* Remove hover border shadow */
 			}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
@@ -3056,12 +3060,12 @@ h2 + .projects-filter {
 		@media screen and (max-width: 1280px) {
 
 			.tiles {
-				margin: -1.25em 0 0 -1.25em;
+				margin: 0 -1em 2rem -1em; /* Moderate negative margin to align with content, add bottom margin */
 			}
 
 				.tiles article {
-					width: calc(33.33333% - 1.25em);
-					margin: 1.25em 0 0 1.25em;
+					width: 33.33333%; /* Remove margin calculations for touching cards */
+					margin: 0; /* Remove all margins so cards touch */
 				}
 
 		}
@@ -3069,12 +3073,12 @@ h2 + .projects-filter {
 		@media screen and (max-width: 980px) {
 
 			.tiles {
-				margin: -1.5em 0 0 -1.5em;
+				margin: 0 -1em 2rem -1em; /* Moderate negative margin to align with content, add bottom margin */
 			}
 
 				.tiles article {
-					width: calc(33.33333% - 1.5em) !important;
-					margin: 1.5em 0 0 1.5em;
+					width: 33.33333% !important; /* Remove margin calculations for touching cards */
+					margin: 0; /* Remove all margins so cards touch */
 				}
 
 		}
@@ -3082,12 +3086,12 @@ h2 + .projects-filter {
 		@media screen and (max-width: 736px) {
 
 			.tiles {
-				margin: -1.5em 0 0 -1.5em;
+				margin: 0 -0.5em 2rem -0.5em; /* Smaller negative margin for mobile, add bottom margin */
 			}
 
 				.tiles article {
-					width: calc(33.33333% - 1.5em) !important;
-					margin: 1.5em 0 0 1.5em;
+					width: 33.33333% !important; /* Remove margin calculations for touching cards */
+					margin: 0; /* Remove all margins so cards touch */
 				}
 
 					.tiles article:hover > .image {
@@ -3102,12 +3106,12 @@ h2 + .projects-filter {
 		@media screen and (max-width: 480px) {
 
 			.tiles {
-				margin: -1.5em 0 0 -1.5em;
+				margin: 0 -0.5em 2rem -0.5em; /* Smaller negative margin for mobile, add bottom margin */
 			}
 
 				.tiles article {
-					width: calc(33.33333% - 1.5em) !important;
-					margin: 1.5em 0 0 1.5em;
+					width: 33.33333% !important; /* Remove margin calculations for touching cards */
+					margin: 0; /* Remove all margins so cards touch */
 				}
 
 		}
@@ -3438,6 +3442,7 @@ h2 + .projects-filter {
 
 	#main {
 		padding: 0em 0 6em 0 ;
+		flex: 1; /* Make main content grow to fill available space */
 	}
 
 		@media screen and (max-width: 736px) {
@@ -3448,53 +3453,49 @@ h2 + .projects-filter {
 
 		}
 
-/* Footer */
+/* Simple Footer */
 #footer {
-    padding: 1.5em 0;
-    background-color: #000000;
+    padding: 2em 0;
+    background-color: transparent;
+    text-align: center;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+#footer .footer-line {
+    border: none;
+    height: 3px; /* Made thicker - 3x the original thickness */
+    background-color: #c9c9c9;
+    margin: 0 0 1em 0; /* Add space below the line */
+    width: 100%;
+}
+
+#footer .footer-text {
+    margin: 0;
+    padding: 0;
+    color: #585858; /* Subtle gray text */
+    font-size: 0.9em;
     text-align: center;
 }
 
 #footer .inner {
-    max-width: 1200px;
+    max-width: 55em; /* Match the main content width */
     margin: 0 auto;
-    padding: 0 1em;
-}
-
-#footer .social-links {
-    margin-bottom: 1em;
-}
-
-#footer .social-links a {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5em;
-    margin: 0 0.5em;
-    transition: color 0.3s ease;
-}
-
-#footer .social-links a:hover {
-    color: #ffffff;
-}
-
-#footer .copyright {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8em;
+    padding: 0 2.5em;
 }
 
 /* Simple media query for mobile */
-@media screen and (max-width: 480px) {
-    #footer {
-        padding: 1em 0;
-    }
-    
-    #footer .social-links a {
-        margin: 0 0.3em;
+@media screen and (max-width: 736px) {
+    #footer .inner {
+        padding: 0 1.25em; /* Match mobile content padding */
     }
 }
 /* Wrapper */
+
+	#wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
 
 	#wrapper > * > .inner {
 		width: 100%;
@@ -3547,13 +3548,13 @@ h2 + .projects-filter {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1.67px solid #404040;
+    border: none; /* Remove border */
     padding: 0.75rem;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
     max-width: none; /* Remove max-width constraint for math papers */
     margin: 0; /* Remove auto centering */
     width: 100%; /* Take full width of grid cell */
-	border-radius: 10px;
+	border-radius: 0; /* Remove border radius for square corners */
     position: relative; /* Ensure stable positioning */
     min-height: 200px; /* Fixed height to prevent layout shifts */
     cursor: pointer; /* Add pointer cursor to indicate clickability */
@@ -3567,8 +3568,8 @@ h2 + .projects-filter {
 
 
 .project-card:hover {
-    border: 2.5px solid #202020;
-    background-color: #404040;
+    border: none; /* Remove hover border */
+    background-color: #696969;
     color: #ffffff;
     transform: none;
 }
@@ -3580,7 +3581,7 @@ h2 + .projects-filter {
 
 .project-card:hover .badge {
     color: #ffffff;
-    background-color: #404040;
+    background-color: #696969;
     border: 1px solid #ffffff;
 }
 
@@ -3702,7 +3703,7 @@ h2 + .projects-filter {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     position: relative;
-    margin: -1.5em 0 0 -1.5em;
+    margin: 0 -1em; /* Moderate negative margin to align with content */
     padding: 0; /* align with tiles */
 }
 
@@ -3718,6 +3719,11 @@ h2 + .projects-filter {
     font-weight: bold;
     text-align: center; /* Center the section title */
     margin: 1rem auto; /* Center horizontally and add vertical spacing */
+}
+
+/* Math Papers Section */
+.certificates-section {
+    margin-top: 4rem; /* Add proper spacing after projects section */
 }
 
 /* Project Filter Buttons */
@@ -3778,18 +3784,18 @@ h2 + .projects-filter {
 @media screen and (max-width: 1280px) {
     /* Desktop: Keep 3-column layout for smaller desktops */
     .certificates-grid > .project-card {
-        width: calc(33.33333% - 1.25em);
-        margin: 1.25em 0 0 1.25em;
+        width: 33.33333%; /* Remove margin calculations for touching cards */
+        margin: 0; /* Remove all margins so cards touch */
     }
-    .certificates-grid { margin: -1.25em 0 0 -1.25em; }
+    .certificates-grid { margin: 0 -1em; /* Moderate negative margin to align with content */ }
 }
 
 @media screen and (max-width: 980px) {
     /* Tablet: Keep 3-column layout for tablets */
-    .certificates-grid { margin: -1.5em 0 0 -1.5em; }
+    .certificates-grid { margin: 0 -1em; /* Moderate negative margin to align with content */ }
     .certificates-grid > .project-card {
-        width: calc(33.33333% - 1.5em) !important;
-        margin: 1.5em 0 0 1.5em;
+        width: 33.33333% !important; /* Remove margin calculations for touching cards */
+        margin: 0; /* Remove all margins so cards touch */
     }
 }
 
@@ -3798,7 +3804,7 @@ h2 + .projects-filter {
     .certificates-grid { 
         display: flex !important;
         flex-direction: column !important;
-        margin: 0 !important;
+        margin: 0 -0.5em !important; /* Smaller negative margin for mobile */
     }
     .certificates-grid > .project-card {
         width: 100% !important;
@@ -3812,7 +3818,7 @@ h2 + .projects-filter {
     .certificates-grid { 
         display: flex !important;
         flex-direction: column !important;
-        margin: 0 !important;
+        margin: 0 -0.5em !important; /* Smaller negative margin for mobile */
     }
     .certificates-grid > .project-card {
         width: 100% !important;

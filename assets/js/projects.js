@@ -15,7 +15,7 @@ const projects = [
     },
     {
         title: "Mams SISO",
-        thumbnail: "projects/SISO/pic03.png",
+        thumbnail: "projects/SISO/thumbnail.png",
         page: "../../projects/SISO/siso.html",
         description: "Digital Sign In/Out System",
         type: "project",
@@ -26,6 +26,13 @@ const projects = [
         thumbnail: "projects/evolv/pic01.png",
         page: "../../projects/evolv/evolv.html",
         description: "Summer 2024 Internship",
+        type: "internship",
+    },
+    {
+        title: "Revimo",
+        thumbnail: "projects/Revimo/pic01.png",
+        page: "../../projects/Revimo/revimo.html",
+        description: "Robotic Mobility Device Development",
         type: "internship",
     },
     {
