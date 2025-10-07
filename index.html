@@ -25,7 +25,7 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 	</noscript>
 </head>
 
-<body class="is-preload">
+<body>
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -124,7 +124,14 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 						</div>
 					</div>
 				</header>
-				<h2 style="justify-content: center;">Projects</h2>
+				<h2 class="projects-heading">Projects</h2>
+
+				<!-- Projects Filter -->
+				<div class="projects-filter" id="projects-filter" style="margin: 0 0 0.5rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+					<button class="filter-btn is-active" data-filter="all">All</button>
+					<button class="filter-btn" data-filter="project">Projects</button>
+					<button class="filter-btn" data-filter="internship">Internships</button>
+				</div>
 
 				
 				<section class="tiles" id="projects-grid">
@@ -138,18 +145,17 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 		
 
 		<section class="certificates-section">
-			<center>
+			<div class="inner">
 				<h2>Math Papers</h2>
-			</center>
-
-			<div class="certificates-grid" id="papers-grid">
-				<!-- Cards will be generated here -->
+				<div class="certificates-grid" id="papers-grid">
+					<!-- Cards will be generated here -->
+				</div>
 			</div>
 		</section>
 
 
 		<!-- Footer -->
-		<footer id="footer">
+		<footer id="footer" style="margin-top: 4rem;">
 			<div class="inner">
 				<div class="social-links">
 					<a href="https://linkedin.com/in/davidmbarsoum" target="_blank" aria-label="LinkedIn">
@@ -163,7 +169,7 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 					</a>
 				</div>
 				<ul class="copyright">
-					<li>&copy; 2024 David Barsoum. All rights reserved. Adapted from rjansens.com.</li>
+					<li>&copy; 2024 David Barsoum. All rights reserved.</li>
 				</ul>
 			</div>
 		</footer>
@@ -177,15 +183,7 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>
-
-		window.onload = function () {
-			setTimeout(function () {
-				console.log('Page is loaded');
-				document.getElementById('view1').classList.add('fade-in');
-
-			}, 100);
-
-		};
+		// Landing page animations removed
 	</script>
 
 	<script src="/assets/js/papers.js"></script>

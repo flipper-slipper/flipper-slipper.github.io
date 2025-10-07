@@ -4,18 +4,21 @@ const projects = [
         thumbnail: "projects/Hopper/hopper_pic01.png",
         page: "../../projects/Hopper/hopper.html",
         description: "Biomechanical hopping machine",
+        type: "project",
     },
     {
         title: "Frisbee Launcher",
-        thumbnail: "projects/Frisbee/pic01.jpg",
+        thumbnail: "projects/Frisbee/pic01.png",
         page: "../../projects/Frisbee/frisbee.html",
         description: "Assistive frisbee launcher",
+        type: "project",
     },
     {
         title: "Mams SISO",
         thumbnail: "projects/SISO/pic03.png",
         page: "../../projects/SISO/siso.html",
         description: "Digital Sign In/Out System",
+        type: "project",
     },
 
     {
@@ -23,24 +26,28 @@ const projects = [
         thumbnail: "projects/evolv/pic01.png",
         page: "../../projects/evolv/evolv.html",
         description: "Summer 2024 Internship",
+        type: "internship",
     },
     {
         title: "UMass Health Navigation App",
         thumbnail: "projects/umass/pic01.png",
         page: "../../projects/umass/umass.html",
         description: "Mobile App development for UMass Health",
+        type: "project",
     },
     {
         title: "RC Airplane & Joystick",
         thumbnail: "projects/plane/pic01.png",
         page: "../../projects/plane/plane.html",
         description: "Guillow's Cessna 170 RC Conversion",
+        type: "project",
     },
     {
         title: "Steam Engine Restoration",
         thumbnail: "projects/steam_engine/pic01.png",
         page: "../../projects/steam_engine/steam_engine.html",
         description: "Meccano Steam Engine Restoration",
+        type: "project",
     },
 ];
 
@@ -62,9 +69,30 @@ function createProject(project) {
                     `;
 }
 
-function renderProjects() {
+function renderProjects(filter = 'all') {
     const container = document.getElementById('projects-grid');
-    container.innerHTML = projects.map(project => createProject(project)).join('');
+    const filtered = filter === 'all' ? projects : projects.filter(p => p.type === filter);
+    container.innerHTML = filtered.map(project => createProject(project)).join('');
 }
 
-document.addEventListener('DOMContentLoaded', renderProjects);
+function setupProjectFilters() {
+    const filterContainer = document.getElementById('projects-filter');
+    if (!filterContainer) return;
+
+    filterContainer.addEventListener('click', function(e) {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        // Update active state
+        [...filterContainer.querySelectorAll('.filter-btn')].forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const filter = btn.getAttribute('data-filter');
+        renderProjects(filter);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupProjectFilters();
+    renderProjects('all');
+});
