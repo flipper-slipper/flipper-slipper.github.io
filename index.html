@@ -20,6 +20,9 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 	<meta name="title" content="David Barsoum">
 	<meta name="description" content="Robotics Engineering Major at Olin College of Engineering" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comptita:wght@400;700&display=swap" rel="stylesheet">
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -78,10 +81,29 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 		-->
 
 
+		<!-- Progress Indicator -->
+		<div class="progress-indicator">
+			<div class="progress-line"></div>
+			<div class="progress-dots">
+				<div class="progress-item top-item">
+					<div class="circle"></div>
+					<span class="label">About</span>
+				</div>
+				<div class="progress-item middle-item">
+					<div class="circle"></div>
+					<span class="label">Projects</span>
+				</div>
+				<div class="progress-item bottom-item">
+					<div class="circle"></div>
+					<span class="label">Papers</span>
+				</div>
+			</div>
+		</div>
+
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<header>
+				<header id="about">
 					<div class="project" id="view1">
 						<h1>David Barsoum</h1>
 
@@ -124,7 +146,7 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 						</div>
 					</div>
 				</header>
-				<h2 class="projects-heading">Projects</h2>
+				<h2 class="projects-heading" id="projects">Projects</h2>
 
 				<!-- Projects Filter -->
 				<div class="projects-filter" id="projects-filter" style="margin: 0 0 0.5rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -144,7 +166,7 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 
 		
 
-		<section class="certificates-section">
+		<section class="certificates-section" id="papers">
 			<div class="inner">
 				<h2>Math Papers</h2>
 				<div class="certificates-grid" id="papers-grid">
@@ -188,6 +210,118 @@ ffmpeg -i animation02.mp4 -movflags faststart -vcodec libx264 -crf 1 -g 1 -pix_f
 
 	<script src="/assets/js/papers.js"></script>
 	<script src="/assets/js/projects.js"></script>
+        <script>
+            // Progress Indicator
+            function initProgressIndicator() {
+                const sections = document.querySelectorAll('#about, #projects, #papers');
+                const progressItems = document.querySelectorAll('.progress-item');
+                
+                function updateActiveSection() {
+                    const scrollPos = window.scrollY;
+                    const windowHeight = window.innerHeight;
+                    
+                    // Remove all active classes
+                    progressItems.forEach(item => item.classList.remove('active'));
+                    
+                    // Special case: if we're at the very top, highlight About
+                    if (scrollPos < 100) {
+                        document.querySelector('.top-item').classList.add('active');
+                        return;
+                    }
+                    
+                    // For other positions, find the most prominent section
+                    let activeSection = null;
+                    let bestScore = -Infinity;
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        const sectionBottom = sectionTop + sectionHeight;
+                        const sectionCenter = sectionTop + sectionHeight / 2;
+                        
+                        // Calculate how much of the section is visible
+                        const visibleTop = Math.max(sectionTop, scrollPos);
+                        const visibleBottom = Math.min(sectionBottom, scrollPos + windowHeight);
+                        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+                        const visibilityRatio = visibleHeight / sectionHeight;
+                        
+                        // Calculate distance from viewport center
+                        const viewportCenter = scrollPos + windowHeight / 2;
+                        const distanceFromCenter = Math.abs(viewportCenter - sectionCenter);
+                        const maxDistance = windowHeight;
+                        const proximityScore = 1 - (distanceFromCenter / maxDistance);
+                        
+                        // Combined score: visibility + proximity
+                        const score = visibilityRatio * 0.7 + proximityScore * 0.3;
+                        
+                        if (score > bestScore) {
+                            bestScore = score;
+                            activeSection = section;
+                        }
+                    });
+                    
+                    // Activate the best section
+                    if (activeSection) {
+                        const sectionId = activeSection.id;
+                        if (sectionId === 'about') {
+                            document.querySelector('.top-item').classList.add('active');
+                        } else if (sectionId === 'projects') {
+                            document.querySelector('.middle-item').classList.add('active');
+                        } else if (sectionId === 'papers') {
+                            document.querySelector('.bottom-item').classList.add('active');
+                        }
+                    }
+                }
+                
+                // Update on scroll
+                window.addEventListener('scroll', updateActiveSection);
+                
+                // Update on load
+                updateActiveSection();
+                
+                // Smooth scroll to sections
+                document.querySelector('.top-item').addEventListener('click', () => {
+                    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+                });
+                document.querySelector('.middle-item').addEventListener('click', () => {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                });
+                document.querySelector('.bottom-item').addEventListener('click', () => {
+                    document.getElementById('papers').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // Mobile layout fix - reorder elements with JavaScript
+            function fixMobileLayout() {
+                if (window.innerWidth <= 768) {
+                    const view1 = document.getElementById('view1');
+                    const h1 = view1.querySelector('h1');
+                    const image = view1.querySelector('.image.thumbnail');
+                    const infoText = view1.querySelector('.info-text');
+                    const socialButtons = view1.querySelector('.social-buttons');
+                    const profileContent = view1.querySelector('.profile-content');
+                    
+                    // Clear the container
+                    view1.innerHTML = '';
+                    
+                    // Reorder elements: Name, Image, Education, Social, Content
+                    view1.appendChild(h1);
+                    view1.appendChild(image);
+                    view1.appendChild(infoText);
+                    view1.appendChild(socialButtons);
+                    view1.appendChild(profileContent);
+                }
+            }
+            
+            // Initialize when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                initProgressIndicator();
+                fixMobileLayout();
+            });
+            
+            // Reorder on window resize
+            window.addEventListener('resize', fixMobileLayout);
+        </script>
 
 </body>
 
