@@ -223,11 +223,15 @@ body, input, select, textarea {
 h1 {
 		color: #000000;
 		font-size: 2em; /* Match section headers */
-		font-weight: 700; /* Bold */
+		font-weight: 500; /* Medium */
 		line-height: 1.3;
 		margin: 0 0 0.2em 0;
 		letter-spacing: -0.035em;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family: "Comptita", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 	
 
@@ -253,13 +257,40 @@ h1 {
 		}
 
 h2, h3, h4, h5, h6 {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-weight: 700;
+		font-family: "Comptita", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 500;
 		color: #000000;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
 		text-transform: none;
 		letter-spacing: 0;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	/* Override gradient for project card titles and math paper titles */
+	.tiles article a h2,
+	.tiles article a h3,
+	.tiles article a h4,
+	.tiles article a h5,
+	.tiles article a h6,
+	.project-card h2,
+	.project-card h3,
+	.project-card h4,
+	.project-card h5,
+	.project-card h6,
+	.papers-list h2,
+	.papers-list h3,
+	.papers-list h4,
+	.papers-list h5,
+	.papers-list h6 {
+		background: none !important;
+		-webkit-background-clip: initial !important;
+		-webkit-text-fill-color: initial !important;
+		background-clip: initial !important;
+		color: #000000 !important;
 	}
 
 /* Tighten spacing for Projects header specifically */
@@ -2945,6 +2976,11 @@ h2 + .projects-filter {
 				.tiles article > a h2 {
 					margin: 0;
 					font-size: 0.9em;
+					opacity: 0;
+					-moz-transition: opacity 0.2s ease;
+					-webkit-transition: opacity 0.2s ease;
+					-ms-transition: opacity 0.2s ease;
+					transition: opacity 0.2s ease;
 				}
 
 				.tiles article > a .content {
@@ -2955,7 +2991,7 @@ h2 + .projects-filter {
 					width: 100%;
 					line-height: 1.4;
 					margin-top: 0.35em;
-					opacity: 0;
+					opacity: 0 !important;
 					font-size: 0.85em;
 				}
 
@@ -2987,8 +3023,14 @@ h2 + .projects-filter {
 					opacity: 0;
 				}
 
-			body:not(.is-touch) .tiles article:hover .content {
+
+			body:not(.is-touch) .tiles article:hover .content p {
+				color: #ffffff !important;
+			}
+
+			body:not(.is-touch) .tiles article:hover a h2 {
 				opacity: 1;
+				color: #ffffff !important;
 			}
 
 		* + .tiles {
@@ -2999,6 +3041,16 @@ h2 + .projects-filter {
 
 		body.is-touch .tiles article .content {
 			opacity: 1;
+		}
+
+		/* Force content to be hidden by default for all devices */
+		.tiles article .content {
+			opacity: 0 !important;
+		}
+
+		/* Override for hover state - must be more specific */
+		body:not(.is-touch) .tiles article:hover .content {
+			opacity: 1 !important;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -3724,6 +3776,7 @@ h2 + .projects-filter {
 
 /* Responsive behavior mirroring .tiles */
 @media screen and (max-width: 1280px) {
+    /* Desktop: Keep 3-column layout for smaller desktops */
     .certificates-grid > .project-card {
         width: calc(33.33333% - 1.25em);
         margin: 1.25em 0 0 1.25em;
@@ -3732,6 +3785,7 @@ h2 + .projects-filter {
 }
 
 @media screen and (max-width: 980px) {
+    /* Tablet: Keep 3-column layout for tablets */
     .certificates-grid { margin: -1.5em 0 0 -1.5em; }
     .certificates-grid > .project-card {
         width: calc(33.33333% - 1.5em) !important;
@@ -3740,18 +3794,30 @@ h2 + .projects-filter {
 }
 
 @media screen and (max-width: 736px) {
-    .certificates-grid { margin: -1.5em 0 0 -1.5em; }
+    /* Mobile: Make math papers stack vertically on medium mobile screens */
+    .certificates-grid { 
+        display: flex !important;
+        flex-direction: column !important;
+        margin: 0 !important;
+    }
     .certificates-grid > .project-card {
-        width: calc(33.33333% - 1.5em) !important;
-        margin: 1.5em 0 0 1.5em;
+        width: 100% !important;
+        margin: 0 0 1.5rem 0 !important;
+        max-width: none !important;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .certificates-grid { margin: -1.5em 0 0 -1.5em; }
+    /* Mobile: Force math papers to stack vertically on small screens */
+    .certificates-grid { 
+        display: flex !important;
+        flex-direction: column !important;
+        margin: 0 !important;
+    }
     .certificates-grid > .project-card {
-        width: calc(33.33333% - 1.5em) !important;
-        margin: 1.5em 0 0 1.5em;
+        width: 100% !important;
+        margin: 0 0 1.5rem 0 !important;
+        max-width: none !important;
     }
 }
 
@@ -3910,4 +3976,320 @@ h2 + .projects-filter {
 
 .tiles {
     clear: both;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    position: fixed;
+    left: 2rem; /* Moved to left */
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-line {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    bottom: 40px;
+    width: 3px;
+    background: #e5e7eb;
+    transform: translateX(-50%);
+}
+
+/* Remove moving indicator - just use section highlighting */
+
+.progress-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+    height: calc(100% - 8rem); /* Leave space for top and bottom circles */
+    justify-content: space-between; /* Distribute dots evenly */
+    padding: 4rem 0; /* Add padding for top and bottom circles */
+}
+
+/* Progress items - separate circle and label positioning */
+.progress-item {
+    position: absolute;
+    cursor: pointer;
+}
+
+.progress-item .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3px solid #e5e7eb;
+    background: white; /* White background to hide the line behind */
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.progress-item .label {
+    position: absolute;
+    left: calc(50% + 1.5rem); /* Position to the right of the centered circle */
+    top: 0;
+    transform: none;
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Position each item to align with line */
+.top-item {
+    top: -12px;
+}
+
+.middle-item {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.bottom-item {
+    bottom: -12px;
+}
+
+/* Active states */
+.progress-item.active .circle {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.progress-item.active .label {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.progress-dot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #6b7280;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-direction: row; /* Ensure horizontal layout with label to the right */
+}
+
+.progress-dot .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    border: 3px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.progress-dot .label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.progress-dot:hover .label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.progress-dot.active .dot {
+    background: #f2849e;
+    border-color: #f2849e;
+    transform: scale(1.2);
+}
+
+.progress-dot.active .label {
+    opacity: 1;
+    transform: translateX(0);
+    color: #f2849e;
+    font-weight: 600;
+}
+
+/* Special styling for first and last dots - larger circles */
+.progress-dot:first-child .dot,
+.progress-dot:last-child .dot {
+    width: 24px; /* Larger circle */
+    height: 24px; /* Larger circle */
+    border: 4px solid #e5e7eb; /* Thicker border */
+}
+
+.progress-dot:first-child.active .dot,
+.progress-dot:last-child.active .dot {
+    background: #f2849e;
+    border-color: #f2849e;
+    transform: scale(1.3); /* Even larger when active */
+}
+
+/* Mobile layout adjustments - AGGRESSIVE OVERRIDE */
+@media screen and (max-width: 768px) {
+    .progress-indicator {
+        display: none;
+    }
+    
+    /* Mobile: Make math papers stack vertically (100% width) */
+    .certificates-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        margin: 0 !important;
+    }
+    
+    .certificates-grid > .project-card {
+        width: 100% !important;
+        margin: 0 0 1.5rem 0 !important;
+        max-width: none !important;
+    }
+    
+    /* NUCLEAR OPTION - Reset everything */
+    #view1 {
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+    
+    /* Force name to top */
+    #view1 h1 {
+        order: 0 !important;
+        margin: 0 0 0.5rem 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+        position: static !important;
+        float: none !important;
+        clear: both !important;
+        display: block !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+    
+    /* Force image to second - smaller and more spacing */
+    #view1 .image.thumbnail {
+        order: 1 !important;
+        position: static !important;
+        width: 150px !important;
+        height: 150px !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        float: none !important;
+        display: block !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+    }
+    
+    /* Force education to third - more spacing */
+    #view1 .info-text {
+        order: 2 !important;
+        margin: 1rem 0 1rem 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+        position: static !important;
+        float: none !important;
+        clear: both !important;
+        display: block !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+    
+    #view1 .social-buttons {
+        order: 3 !important;
+        margin: 0 0 1rem 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+        position: static !important;
+        float: none !important;
+        clear: both !important;
+        display: block !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+    
+    #view1 .profile-content {
+        order: 4 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+        position: static !important;
+        float: none !important;
+        clear: both !important;
+        display: block !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+    
+    /* Mobile: Make section headers match name styling - different approach */
+    .projects-heading,
+    .papers-heading {
+        font-family: "Comptita", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-weight: 500 !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        font-size: 2em !important;
+        margin: 0 0 0.2em 0 !important;
+        letter-spacing: -0.035em !important;
+    }
+    
+    /* Also target any h2 in projects and papers sections */
+    #projects h2,
+    #papers h2,
+    section h2 {
+        font-family: "Comptita", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-weight: 500 !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        font-size: 2em !important;
+        margin: 0 0 0.2em 0 !important;
+        letter-spacing: -0.035em !important;
+    }
+    
+    /* Mobile: Make math papers stack vertically */
+    .papers-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .papers-list .paper-item {
+        width: 100% !important;
+        margin: 0 0 1rem 0 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .papers-list .paper-item .paper-content {
+        width: 100% !important;
+        margin: 0.5rem 0 0 0 !important;
+    }
 }
