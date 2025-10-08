@@ -7,6 +7,11 @@ const PROJECT_DATA = {
         subtitle: '2025, Robotics Engineering Intern',
         skills: ['Design for Manufacturing', 'CNC Machining', 'Fusion CAM']
     },
+    'boxing_robot': {
+        title: 'Boxing Robot',
+        subtitle: '2025, Fundamentals of Robotics Project',
+        skills: ['Computer Vision', 'ARUCO Detection', 'Inverse Kinematics', 'Python']
+    },
     'evolv': {
         title: 'Evolv Technology',
         subtitle: 'Summer 2024, Software Engineering Intern',
@@ -136,6 +141,7 @@ function getProjectNameFromPath() {
         // Convert folder name to display name
         const displayNames = {
             'Revimo': 'revimo',
+            'boxing_robot': 'boxing_robot',
             'evolv': 'evolv', 
             'Frisbee': 'frisbee',
             'Hopper': 'hopper',

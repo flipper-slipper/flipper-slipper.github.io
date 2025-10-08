@@ -7,9 +7,16 @@ const projects = [
         type: "internship",
     },
     {
+        title: "Boxing Robot",
+        thumbnail: "projects/boxing_robot/pic01.png",
+        page: "../../projects/boxing_robot/boxing_robot.html",
+        description: "Vision-guided task-space planning on 5-DOF manipulator",
+        type: "project",
+    },
+    {
         title: "ROS2 FSM Robot",
         thumbnail: "projects/ros_fsm/pic01.png",
-        page: "https://github.com/flipper-slipper/comprobo-project1-robobehaviors-FSM",
+        page: "../../projects/ros_fsm/ros_fsm.html",
         description: "Finite State Machine controlling wall follow, teleop, and avoidance",
         type: "project",
     },
