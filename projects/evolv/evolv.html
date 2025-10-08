@@ -22,44 +22,25 @@
 					<header id="header">
 						<div class="inner">
 
-							<!-- Nav 
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-							-->
 
 						</div>
 					</header>
 
-				<!-- Menu 
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../../index.html">Home</a></li>
-							<li><a href="#" onclick='window.open("../resume/resume.pdf");return false;'>Resume</a></li>
-						</ul>
-					</nav>
-				-->
 
-				<!-- Navigation Breadcrumb -->
-				<div class="nav-breadcrumb">
-					<a href="../../index.html" class="nav-button">david</a> / evolv
-				</div>
+				<!-- Navigation will be injected by navigation.js -->
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner" style="max-width: 1000px; margin: 0 auto;">
-							<h1 style="margin: 0 0 0 0;">Evolv Technology</h1>
-							<p style="font-size: 1.1rem; color: #666; margin: 0 0 1rem 0; font-style: italic;">Summer 2024, Software Engineering Intern</p>
-							<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
-								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: lowercase; font-size: 1rem; font-weight: 400; letter-spacing: normal; height: 2rem; padding: 0 0.75rem; border-radius: 8px; border: 1px solid #d1d5db; background: #ffffff; color: #374151; display: inline-flex; align-items: center; cursor: default;">Python</span>
-								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: lowercase; font-size: 1rem; font-weight: 400; letter-spacing: normal; height: 2rem; padding: 0 0.75rem; border-radius: 8px; border: 1px solid #d1d5db; background: #ffffff; color: #374151; display: inline-flex; align-items: center; cursor: default;">Flask API</span>
-								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: lowercase; font-size: 1rem; font-weight: 400; letter-spacing: normal; height: 2rem; padding: 0 0.75rem; border-radius: 8px; border: 1px solid #d1d5db; background: #ffffff; color: #374151; display: inline-flex; align-items: center; cursor: default;">CI/CD Pipeline</span>
+						<div class="inner project-container">
+							<h1 class="project-title">Evolv Technology</h1>
+							<p class="project-subtitle">Summer 2024, Software Engineering Intern</p>
+							<div class="skills-container">
+								<span class="skill-tag">Python</span>
+								<span class="skill-tag">Flask API</span>
+								<span class="skill-tag">CI/CD Pipeline</span>
 							</div>
 							
-							<hr style="border: none; height: 2px; background: linear-gradient(90deg, #ff6b35, #f7931e); margin: 2rem 0;">
+							<hr class="project-divider">
 							
 							<span class="image fit"><img src="./pic01.png" alt="Evolv Technology Software Engineering" /></span>
 
@@ -82,17 +63,20 @@
 
 						<h2>Gallery</h2>
 							
-							<div class="carousel large"
-									data-flickity='{ "imagesLoaded": true, "percentPosition": false, "wrapAround": true }'>
-									<img src="pic02.png">
-									<img src="pic03.png">
-									<img src="pic04.png">
-									<img src="pic05.png">
-									<img src="pic06.png">
-									
-									</div>
+							<div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
+								<img src="pic02.png" alt="Evolv Gallery Image 1" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic03.png" alt="Evolv Gallery Image 2" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic04.png" alt="Evolv Gallery Image 3" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic05.png" alt="Evolv Gallery Image 4" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic06.png" alt="Evolv Gallery Image 5" style="width: 100%; height: auto; border-radius: 8px;">
+							</div>
 						</div>
 					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<!-- Footer content will be injected by footer.js -->
+				</footer>
 
 			</div>
 
@@ -103,6 +87,8 @@
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
 			<script src="../../assets/js/flickity.js"></script>
+			<script src="../../assets/js/navigation.js"></script>
+			<script src="../../assets/js/footer.js"></script>
 
 	</body>
 </html>

@@ -26,50 +26,25 @@
 		<header id="header">
 			<div class="inner">
 
-				<!-- Logo -->
-				<a href="../../index.html" class="logo">
-					<span class="symbol"><img src="/logo.png" alt="" /></span><span class="title">David Barsoum</span>
-				</a>
-
-				<!-- Nav 
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-							-->
 
 			</div>
 		</header>
 
-		<!-- Menu 
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../../index.html">Home</a></li>
-				<li><a href="#" onclick='window.open("../resume/resume.pdf");return false;'>Resume</a></li>
-				
-				<li><a href="../Formula/formula.html">Olin Electric Motorsports</a></li>
-				<li><a href="../Rocketry/rocketry.html">Model Rocket Avionics</a></li>
-				<li><a href="../SpaceX/spacex.html">SpaceX</a></li>
+		<!-- Navigation will be injected by navigation.js -->
 
-				<li><a href="../Lamp/lamp.html">Lamp</a></li>
-				<li><a href="../Tile_placer/tile_placer.html">Un-tiled</a></li>
-				<li><a href="../CNC_Box/CNC_box.html">CNC Box</a></li>
-
-				<li><a href="../LANL/lanl.html">Orbit Determination</a></li>
-				<li><a href="../balancer/balancer.html">Vibration Balancer</a></li>
-				<li><a href="../Diffuser/diffuser.html">Trubojet Diffuser</a></li>
-
-				<li><a href="../Hopper/hopper.html">Hopper</a></li>
-						</ul>
-					</nav>
-				-->
-
-		<!-- Main -->
+				<!-- Main -->
 		<div id="main">
-			<div class="inner">
-				<h1>Meccano Steam Engine Restoration</h1>
+			<div class="inner project-container">
+				<h1 class="project-title">Steam Engine Model</h1>
+				<p class="project-subtitle">2023, Thermodynamics Project</p>
+				<div class="skills-container">
+					<span class="skill-tag">Thermodynamics</span>
+					<span class="skill-tag">Mechanical Design</span>
+					<span class="skill-tag">3D Printing</span>
+				</div>
+				
+				<hr class="project-divider">
+				
 				<span class="image fit"><img src="pic01.png" alt="Restored Meccano Steam Engine" /></span>
 			
 				<p>
@@ -92,9 +67,8 @@
 					Additional note: The fuel tray in this video is not original. This engine was bought off the shelf and came without it. My father had to make his own fuel tray.
 				</p>
 			
-				<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+				<div class="video-container">
 					<iframe src="https://www.youtube.com/embed/vyiMhZgHcAQ" 
-							style="position:absolute;top:0;left:0;width:100%;height:100%;" 
 							frameborder="0" 
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
 							allowfullscreen>
@@ -106,24 +80,20 @@
 
 			<!-- Footer -->
 			<footer id="footer">
-				<div class="inner">
-					<section>
-					</section>
-					<ul class="copyright">
-						<li>&copy; David Barsoum. All rights reserved</li>
-						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
+				<!-- Footer content will be injected by footer.js -->
 			</footer>
 
 		</div>
 
 		<!-- Scripts -->
-		<script src="../../assets/js/jquery.min.js"></script>
-		<script src="../../assets/js/browser.min.js"></script>
-		<script src="../../assets/js/breakpoints.min.js"></script>
-		<script src="../../assets/js/util.js"></script>
-		<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/navigation.js"></script>
+			<script src="../../assets/js/footer.js"></script>
+			<script src="../../assets/js/header.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
 			integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -136,7 +106,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js"
 			integrity="sha512-mq6TSOBEH8eoYFBvyDQOQf63xgTeAk7ps+MHGLWZ6Byz0BqQzrP+3GIgYL+KvLaWgpL8XgDVbIRYQeLa3Vqu6A=="
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="./animation.js"></script>
 		<script src="../../assets/js/flickity.js"></script>
 
 </body>

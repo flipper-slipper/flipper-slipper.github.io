@@ -62,6 +62,13 @@ const projects = [
         description: "Meccano Steam Engine Restoration",
         type: "project",
     },
+    {
+        title: "Mini Wind Tunnel",
+        thumbnail: "projects/wind_tunnel/pic01.png",
+        page: "../../projects/wind_tunnel/wind_tunnel.html",
+        description: "Compact wind tunnel for aerodynamic testing",
+        type: "project",
+    },
 ];
 
 

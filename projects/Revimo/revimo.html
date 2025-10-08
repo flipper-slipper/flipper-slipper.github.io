@@ -22,44 +22,25 @@
 					<header id="header">
 						<div class="inner">
 
-							<!-- Nav 
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-							-->
 
 						</div>
 					</header>
 
-				<!-- Menu 
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../../index.html">Home</a></li>
-							<li><a href="#" onclick='window.open("../resume/resume.pdf");return false;'>Resume</a></li>
-						</ul>
-					</nav>
-				-->
 
-				<!-- Navigation Breadcrumb -->
-				<div class="nav-breadcrumb">
-					<a href="../../index.html" class="nav-button">david</a> / revimo
-				</div>
+				<!-- Navigation will be injected by navigation.js -->
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner" style="max-width: 1000px; margin: 0 auto;">
-							<h1 style="margin: 0 0 0 0;">Revimo</h1>
-							<p style="font-size: 1.1rem; color: #666; margin: 0 0 1rem 0; font-style: italic;">2025, Robotics Engineering Intern</p>
-							<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
-								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: lowercase; font-size: 1rem; font-weight: 400; letter-spacing: normal; height: 2rem; padding: 0 0.75rem; border-radius: 8px; border: 1px solid #d1d5db; background: #ffffff; color: #374151; display: inline-flex; align-items: center; cursor: default;">Design for Manufacturing</span>
-								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: lowercase; font-size: 1rem; font-weight: 400; letter-spacing: normal; height: 2rem; padding: 0 0.75rem; border-radius: 8px; border: 1px solid #d1d5db; background: #ffffff; color: #374151; display: inline-flex; align-items: center; cursor: default;">CNC Machining</span>
-								<span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: lowercase; font-size: 1rem; font-weight: 400; letter-spacing: normal; height: 2rem; padding: 0 0.75rem; border-radius: 8px; border: 1px solid #d1d5db; background: #ffffff; color: #374151; display: inline-flex; align-items: center; cursor: default;">Fusion CAM</span>
+						<div class="inner project-container">
+							<h1 class="project-title">Revimo</h1>
+							<p class="project-subtitle">2025, Robotics Engineering Intern</p>
+							<div class="skills-container">
+								<span class="skill-tag">Design for Manufacturing</span>
+								<span class="skill-tag">CNC Machining</span>
+								<span class="skill-tag">Fusion CAM</span>
 							</div>
 							
-							<hr style="border: none; height: 2px; background: linear-gradient(90deg, #ff6b35, #f7931e); margin: 2rem 0;">
+							<hr class="project-divider">
 							
 							<span class="image fit"><img src="./pic01.png" alt="Revimo Robotic Mobility Device" /></span>
 
@@ -77,13 +58,13 @@
 							</p>
 
 							<h2>Testing Setup</h2>
-							<div class="section-content" style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
-								<div style="flex: 1;">
+							<div class="section-content">
+								<div>
 									<p>I designed and built an automated testing setup to validate the device's performance and reliability. The system included custom fixtures and measurement equipment to ensure consistent testing protocols.</p>
 									<p>The testing setup allowed for comprehensive evaluation of the robotic mobility device under various conditions, ensuring it met all performance specifications before deployment.</p>
 								</div>
-								<div style="flex: 1;">
-									<video controls style="width: 100%; height: auto;">
+								<div>
+									<video controls>
 										<source src="testing setup.MP4" type="video/mp4">
 										Your browser does not support the video tag.
 									</video>
@@ -91,13 +72,13 @@
 							</div>
 
 							<h2>Machining</h2>
-							<div class="section-content" style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
-								<div style="flex: 1;">
+							<div class="section-content">
+								<div>
 									<p>I machined numerous components on a CNC mill, creating CAM programs in Fusion 360 to optimize toolpaths and machining efficiency. This hands-on experience with precision manufacturing was crucial for understanding the production process.</p>
 									<p>The machining work involved creating custom fixtures and jigs to ensure consistent part quality and reduce setup times between operations.</p>
 								</div>
-								<div style="flex: 1;">
-									<video controls style="width: 100%; height: auto;">
+								<div>
+									<video controls>
 										<source src="machining video.MP4" type="video/mp4">
 										Your browser does not support the video tag.
 									</video>
@@ -105,29 +86,32 @@
 							</div>
 
 							<h2>Demo</h2>
-							<div class="section-content" style="display: flex; gap: 2rem; align-items: flex-start; margin: 2rem 0;">
-								<div style="flex: 1;">
+							<div class="section-content">
+								<div>
 									<p>I had the opportunity to demonstrate the product at the Massachusetts State House, presenting the innovative robotic mobility solution to government officials and stakeholders.</p>
 									<p>This demonstration showcased the device's capabilities and potential impact on improving mobility for individuals with disabilities, highlighting the practical applications of the technology.</p>
 								</div>
-								<div style="flex: 1;">
-									<img src="demo.JPEG" alt="Product Demonstration at MA State House" style="width: 100%; height: auto;">
+								<div>
+									<img src="demo.JPEG" alt="Product Demonstration at MA State House">
 								</div>
 							</div>
 
 							<h2>Machined Parts</h2>
-							<div class="carousel large"
-									data-flickity='{ "imagesLoaded": true, "percentPosition": false, "wrapAround": true }'>
-									<img src="part1.JPEG" alt="Machined Part 1">
-									<img src="part2.JPEG" alt="Machined Part 2">
-									<img src="part3.JPEG" alt="Machined Part 3">
-									<img src="part4.JPEG" alt="Machined Part 4">
+							<div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
+								<img src="part1.JPEG" alt="Machined Part 1" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="part2.JPEG" alt="Machined Part 2" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="part3.JPEG" alt="Machined Part 3" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="part4.JPEG" alt="Machined Part 4" style="width: 100%; height: auto; border-radius: 8px;">
 							</div>
 
 
 						</div>
 					</div>
 
+				<!-- Footer -->
+				<footer id="footer">
+					<!-- Footer content will be injected by footer.js -->
+				</footer>
 
 			</div>
 
@@ -138,6 +122,8 @@
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
 			<script src="../../assets/js/flickity.js"></script>
+			<script src="../../assets/js/navigation.js"></script>
+			<script src="../../assets/js/footer.js"></script>
 
 	</body>
 </html>
