@@ -1,6 +1,6 @@
 const projects = [
     {
-        title: "Revimo",
+        title: "ReviMo @ Mass Robotics",
         thumbnail: "projects/Revimo/pic01.png",
         page: "../../projects/Revimo/revimo.html",
         description: "2025 Summer Internship",

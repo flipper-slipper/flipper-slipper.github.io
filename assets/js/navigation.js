@@ -3,7 +3,7 @@
 
 const PROJECT_DATA = {
     'revimo': {
-        title: 'Revimo',
+        title: 'ReviMo @ Mass Robotics',
         subtitle: '2025, Robotics Engineering Intern',
         skills: ['Design for Manufacturing', 'CNC Machining', 'Fusion CAM']
     },
