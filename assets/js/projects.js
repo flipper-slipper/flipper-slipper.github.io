@@ -1,17 +1,24 @@
 const projects = [
     {
-        title: "Hopper",
-        thumbnail: "projects/Hopper/hopper_pic01.png",
-        page: "../../projects/Hopper/hopper.html",
-        description: "Biomechanical hopping machine",
-        type: "project",
+        title: "Revimo",
+        thumbnail: "projects/Revimo/pic01.png",
+        page: "../../projects/Revimo/revimo.html",
+        description: "2025 Summer Internship",
+        type: "internship",
     },
     {
         title: "ROS2 FSM Robot",
         thumbnail: "projects/ros_fsm/pic01.png",
-        page: "../../projects/ros_fsm/ros_fsm.html",
+        page: "https://github.com/flipper-slipper/comprobo-project1-robobehaviors-FSM",
         description: "Finite State Machine controlling wall follow, teleop, and avoidance",
         type: "project",
+    },
+    {
+        title: "Evolv Technology",
+        thumbnail: "projects/evolv/pic01.png",
+        page: "../../projects/evolv/evolv.html",
+        description: "Summer 2024 Internship",
+        type: "internship",
     },
     {
         title: "Frisbee Launcher",
@@ -21,26 +28,18 @@ const projects = [
         type: "project",
     },
     {
+        title: "Hopper",
+        thumbnail: "projects/Hopper/hopper_pic01.png",
+        page: "../../projects/Hopper/hopper.html",
+        description: "Biomechanical hopping machine",
+        type: "project",
+    },
+    {
         title: "Mams SISO",
         thumbnail: "projects/SISO/thumbnail.png",
         page: "../../projects/SISO/siso.html",
         description: "Digital Sign In/Out System",
         type: "project",
-    },
-
-    {
-        title: "Evolv Technology",
-        thumbnail: "projects/evolv/pic01.png",
-        page: "../../projects/evolv/evolv.html",
-        description: "Summer 2024 Internship",
-        type: "internship",
-    },
-    {
-        title: "Revimo",
-        thumbnail: "projects/Revimo/pic01.png",
-        page: "../../projects/Revimo/revimo.html",
-        description: "Robotic Mobility Device Development",
-        type: "internship",
     },
     {
         title: "UMass Health Navigation App",
@@ -67,13 +66,15 @@ const projects = [
 
 
 function createProject(project) {
+    const isExternal = /^https?:\/\//.test(project.page);
+    const targetAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
     return `
         <article class="style1">
             <span class="image">
                 <img src="${project.thumbnail}"
                     alt="${project.description}" />
             </span>
-            <a href="${project.page}">
+            <a href="${project.page}"${targetAttr}>
                 <h2>${project.title}</h2>
                 <div class="content">
                     <p>${project.description}</p>
