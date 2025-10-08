@@ -35,7 +35,8 @@
 							<div class="skills-container">
 								<span class="skill-tag">Aerodynamics</span>
 								<span class="skill-tag">3D Printing</span>
-								<span class="skill-tag">Data Acquisition</span>
+								<span class="skill-tag">Multivariable Calculus</span>
+								<span class="skill-tag">Navier-Stokes Equations</span>
 							</div>
 							
 							<hr class="project-divider">
@@ -43,56 +44,64 @@
 							<span class="image fit"><img src="./pic01.png" alt="Mini Wind Tunnel Setup" /></span>
 
 							<p>
-								I designed and built a compact wind tunnel for aerodynamic testing and research. This project involved creating a functional testing environment to study airflow patterns and aerodynamic properties of various objects.
+								Jack Wei (Olin '28) and I built a small wind tunnel for a teach-in project. We wanted to create something that could help students see how air flows around objects.
 							</p>
 
 							<p>
-								The wind tunnel features a carefully designed contraction section to ensure smooth, laminar airflow, along with a test section equipped with pressure sensors and flow visualization capabilities.
+								The wind tunnel has a contraction section to smooth out the airflow and a test section where we can add mist to visualize the air patterns.
 							</p>
 
 							<p>
-								I used 3D printing to create custom components and integrated data acquisition systems to collect and analyze airflow measurements in real-time.
+								We used it to show students basic aerodynamic concepts by testing different objects and watching how the air moved around them.
 							</p>
 
-							<h2>Design Process</h2>
+							<h2>Design</h2>
 							<div class="section-content">
 								<div>
-									<p>I designed the wind tunnel with a focus on creating smooth, laminar airflow through careful consideration of the contraction ratio and test section geometry.</p>
-									<p>The design process involved computational fluid dynamics (CFD) simulations to optimize the flow characteristics before building the physical prototype.</p>
+									<p>We tried to make the wind tunnel work well for teaching. We focused on getting smooth airflow and making sure students could actually see what was happening.</p>
+									<p>Most of our effort went into making the flow visualization work so students could see the air patterns around different objects.</p>
 								</div>
 								<div>
 									<div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
-										<img src="pic02.png" alt="Wind Tunnel Design" style="width: 100%; height: auto; border-radius: 8px;">
-										<img src="pic03.png" alt="CFD Simulation" style="width: 100%; height: auto; border-radius: 8px;">
-										<img src="pic04.png" alt="3D Printed Components" style="width: 100%; height: auto; border-radius: 8px;">
+										<img src="fans.JPEG" alt="Wind Tunnel Fans" style="width: 100%; height: auto; border-radius: 8px;">
+										<img src="filters.JPEG" alt="Air Filters" style="width: 100%; height: auto; border-radius: 8px;">
+										<img src="whole device.JPEG" alt="Complete Wind Tunnel Setup" style="width: 100%; height: auto; border-radius: 8px;">
+									</div>
+									<img src="misters.JPEG" alt="Mist System" style="width: 100%; height: auto; border-radius: 8px; margin-top: 15px;">
+								</div>
+							</div>
+
+							<h2>Testing</h2>
+							<div class="section-content">
+								<div>
+									<p>We tested different objects to see how the air flowed around them. We tried a chip and a cow-shaped object to show students how different shapes affect airflow.</p>
+									<p>Students could watch the mist move around the objects in real-time, which helped them understand what was happening.</p>
+								</div>
+								<div>
+									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+										<video controls style="width: 100%; border-radius: 8px;">
+											<source src="chip aero.MP4" type="video/mp4">
+											Your browser does not support the video tag.
+										</video>
+										<video controls style="width: 100%; border-radius: 8px;">
+											<source src="cow aero.MP4" type="video/mp4">
+											Your browser does not support the video tag.
+										</video>
 									</div>
 								</div>
 							</div>
 
-							<h2>Testing & Results</h2>
+							<h2>Documentation</h2>
 							<div class="section-content">
 								<div>
-									<p>I conducted various tests to validate the wind tunnel's performance, including flow uniformity measurements and pressure distribution analysis.</p>
-									<p>The data acquisition system allows for real-time monitoring of airflow parameters and provides valuable insights into aerodynamic behavior.</p>
+									<p>We wrote up our process and what we learned from building and testing the wind tunnel.</p>
+									<a href="Teach-in Project Documentation.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Download Documentation</a>
 								</div>
 								<div>
-									<video controls style="width: 100%; border-radius: 8px;">
-										<source src="test_video.mp4" type="video/mp4">
-										Your browser does not support the video tag.
-									</video>
+									<iframe src="Teach-in Project Documentation.pdf" width="100%" height="400px" style="border-radius: 8px;"></iframe>
 								</div>
 							</div>
 
-							<h2>Project Documentation</h2>
-							<div class="section-content">
-								<div>
-									<p>Comprehensive documentation of the design process, testing procedures, and experimental results.</p>
-									<a href="report.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Download Report</a>
-								</div>
-								<div>
-									<iframe src="report.pdf" width="100%" height="400px" style="border-radius: 8px;"></iframe>
-								</div>
-							</div>
 
 						</div>
 					</div>
