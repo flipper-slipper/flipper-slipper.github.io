@@ -14,6 +14,13 @@ const projects = [
         type: "project",
     },
     {
+        title: "Mini Wind Tunnel",
+        thumbnail: "projects/wind_tunnel/pic01.png",
+        page: "../../projects/wind_tunnel/wind_tunnel.html",
+        description: "Compact wind tunnel for aerodynamic testing",
+        type: "project",
+    },
+    {
         title: "Evolv Technology",
         thumbnail: "projects/evolv/pic01.png",
         page: "../../projects/evolv/evolv.html",
@@ -60,13 +67,6 @@ const projects = [
         thumbnail: "projects/steam_engine/pic01.png",
         page: "../../projects/steam_engine/steam_engine.html",
         description: "Meccano Steam Engine Restoration",
-        type: "project",
-    },
-    {
-        title: "Mini Wind Tunnel",
-        thumbnail: "projects/wind_tunnel/pic01.png",
-        page: "../../projects/wind_tunnel/wind_tunnel.html",
-        description: "Compact wind tunnel for aerodynamic testing",
         type: "project",
     },
 ];
