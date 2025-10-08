@@ -36,53 +36,20 @@
                     
                     <span class="image fit"><img src="pic01.png" alt="ROS FSM overview" /></span>
 
+                    <h2>About</h2>
                     <p>
                         A warm‑up project for Computational Robotics integrating several robot behaviors—teleoperation, square path driving, 
                         wall following, person tracking, and obstacle avoidance—under a centralized finite state machine (FSM). The FSM acts 
                         as the sole arbitrator of velocity commands, ensuring clean handoffs between behaviors and avoiding command conflicts.
                     </p>
-
                     <p>
                         I implemented the wall follower and the FSM integration. The FSM coordinates nodes via topics: each behavior publishes 
                         its trigger and its own candidate velocity command; the FSM switches active state on triggers and forwards only the 
                         active behavior's command to <code>/cmd_vel</code>. This architecture makes transitions observable and prevents 
                         multiple nodes from driving the robot simultaneously.
                     </p>
-
-                    <h2>Behaviors</h2>
-                    <ul>
-                        <li><b>Teleoperation</b>: Keyboard control for linear and angular velocity (WASD style) for testing and manual override.</li>
-                        <li><b>Square Path</b>: Proportional control to drive straight segments and perform 90° turns on odometry.</li>
-                        <li><b>Wall Following</b>: Maintain offset from a detected wall using LIDAR and heading error feedback.</li>
-                        <li><b>Person Tracking</b>: Track the centroid of front‑arc LIDAR points, transform to odom frame, and follow within a safety radius.</li>
-                        <li><b>Obstacle Avoidance</b>: Attractive/repulsive potential fields with capped linear speed and heading correction.</li>
-                    </ul>
-
-                    <h2>State Machine</h2>
                     <p>
-                        States include obstacle avoidance, wall following, teleop, and emergency stop. Transitions are driven by dedicated
-                        trigger topics (e.g., wall detected) and safety conditions. Only the active state's velocity is republished to 
-                        <code>/cmd_vel</code>.
-                    </p>
-
-                    <h2>Media</h2>
-                    <div class="carousel large"
-                        data-flickity='{ "imagesLoaded": true, "percentPosition": false, "wrapAround": true }'>
-                        <img src="pic02.png" alt="Wall following demo">
-                        <img src="pic03.png" alt="Obstacle avoidance potential fields">
-                    </div>
-
-                    <h2>Report</h2>
-                    <div class="text-center">
-                        <iframe src="Robobehaviors_FSM_Documentation.pdf" width="80%" height="800px"></iframe>
-                    </div>
-                    <br>
-                    <a href="Robobehaviors_FSM_Documentation.pdf" target="_blank">Download Report</a>
-
-                    <h2>Source</h2>
-                    <p>
-                        Code and full write‑up are available on GitHub: 
-                        <a href="https://github.com/flipper-slipper/comprobo-project1-robobehaviors-FSM" target="_blank">flipper-slipper/comprobo-project1-robobehaviors-FSM</a>.
+                        <a href="https://github.com/flipper-slipper/comprobo-project1-robobehaviors-FSM" target="_blank" rel="noopener noreferrer">View the GitHub repo</a>
                     </p>
                 </div>
             </div>
