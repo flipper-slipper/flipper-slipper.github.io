@@ -4,13 +4,18 @@
 const PROJECT_DATA = {
     'revimo': {
         title: 'ReviMo @ Mass Robotics',
-        subtitle: '2025, Robotics Engineering Intern',
+        subtitle: 'Summer 2025, Robotics Engineering Intern',
         skills: ['Design for Manufacturing', 'CNC Machining', 'Fusion CAM']
     },
     'boxing_robot': {
         title: 'Boxing Robot',
-        subtitle: '2025, Fundamentals of Robotics Project',
+        subtitle: 'Spring 2025, Fundamentals of Robotics Project',
         skills: ['Computer Vision', 'ARUCO Detection', 'Inverse Kinematics', 'Python']
+    },
+    'techroast': {
+        title: 'Techroast',
+        subtitle: 'Summer 2025, Creative Hacking Project',
+        skills: ['Meta Ray-Ban Glasses', 'Livestreaming', 'Custom Apparel', 'Creative Hacking']
     },
     'evolv': {
         title: 'Evolv Technology',
@@ -19,12 +24,12 @@ const PROJECT_DATA = {
     },
     'frisbee': {
         title: 'Assistive Frisbee Launcher',
-        subtitle: '2024, Mechanical Design Project',
+        subtitle: 'Spring 2024, Mechanical Design Project',
         skills: ['OnShape', 'Arduino', 'Mechanical Design']
     },
     'hopper': {
         title: 'Mechanical Hopper',
-        subtitle: '2023, First Year Engineering Project',
+        subtitle: 'Fall 2024, First Year Engineering Project',
         skills: ['Rapid Prototyping', 'Mechanical Design', 'Spring Systems']
     },
     'frc190': {
@@ -34,27 +39,27 @@ const PROJECT_DATA = {
     },
     'plane': {
         title: 'RC Plane Design',
-        subtitle: '2023, Aerospace Engineering Project',
+        subtitle: 'Fall 2020, Aerospace Engineering Project',
         skills: ['CAD Design', 'Aerodynamics', 'Flight Testing']
     },
     'ros_fsm': {
         title: 'ROS2 RoboBehaviors + Finite State Machine',
-        subtitle: '2024, Computational Robotics Project',
+        subtitle: 'Fall 2025, Computational Robotics Project',
         skills: ['ROS2', 'Python', 'Finite State Machines']
     },
     'siso': {
         title: 'Digital Sign In/Out System',
-        subtitle: '2024, Software Engineering Project',
+        subtitle: '2022-2024, Software Engineering Project',
         skills: ['Flutter', 'Firebase', 'Mobile Development']
     },
     'steam_engine': {
         title: 'Steam Engine Model',
-        subtitle: '2023, Thermodynamics Project',
+        subtitle: 'Spring 2020, Thermodynamics Project',
         skills: ['Thermodynamics', 'Mechanical Design', '3D Printing']
     },
     'umass': {
         title: 'UMass Memorial Navigation App',
-        subtitle: '2024, Mobile App Development',
+        subtitle: 'Spring 2025, Mobile App Development',
         skills: ['Flutter', 'Firestore', 'Mobile Development']
     }
 };
@@ -142,6 +147,7 @@ function getProjectNameFromPath() {
         const displayNames = {
             'Revimo': 'revimo',
             'boxing_robot': 'boxing_robot',
+            'techroast': 'techroast',
             'evolv': 'evolv', 
             'Frisbee': 'frisbee',
             'Hopper': 'hopper',
