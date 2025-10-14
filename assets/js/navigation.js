@@ -69,7 +69,7 @@ function createNavigationBreadcrumb(projectName) {
         <!-- Navigation Breadcrumb -->
         <div class="nav-breadcrumb">
             <div>
-                <a href="../../index.html" class="nav-button">david</a> / ${projectName}
+                <a href="/" class="nav-button">david</a> / ${projectName}
             </div>
         </div>
     `;
