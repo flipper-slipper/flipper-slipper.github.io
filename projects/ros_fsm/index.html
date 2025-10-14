@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ROS2 Robot: Finite State Machine Behaviors</title>
+        <link rel="icon" href="/logo.png">
+        <meta charset="utf-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../../assets/css/main.css" />
+        <link rel="stylesheet" href="../../assets/css/flickity.css" media="screen">
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+
+
+                </div>
+            </header>
+
+            <!-- Navigation will be injected by navigation.js -->
+
+            <div id="main">
+                <div class="inner project-container">
+                    <h1 class="project-title">ROS2 RoboBehaviors + Finite State Machine</h1>
+                    <p class="project-subtitle">Fall 2025, Computational Robotics Project</p>
+                    <div class="skills-container">
+                        <span class="skill-tag">ROS2</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Finite State Machines</span>
+                    </div>
+                    
+                    <hr class="project-divider">
+                    
+                    <span class="image fit"><img src="pic01.png" alt="ROS FSM overview" /></span>
+
+                    <h2>About</h2>
+                    <p>
+                        A warm‑up project for Computational Robotics integrating several robot behaviors—teleoperation, square path driving, 
+                        wall following, person tracking, and obstacle avoidance—under a centralized finite state machine (FSM). The FSM acts 
+                        as the sole arbitrator of velocity commands, ensuring clean handoffs between behaviors and avoiding command conflicts.
+                    </p>
+                    <p>
+                        I implemented the wall follower and the FSM integration. The FSM coordinates nodes via topics: each behavior publishes 
+                        its trigger and its own candidate velocity command; the FSM switches active state on triggers and forwards only the 
+                        active behavior's command to <code>/cmd_vel</code>. This architecture makes transitions observable and prevents 
+                        multiple nodes from driving the robot simultaneously.
+                    </p>
+                    <p>
+                        <a href="https://github.com/flipper-slipper/comprobo-project1-robobehaviors-FSM" target="_blank" rel="noopener noreferrer">View the GitHub repo</a>
+                    </p>
+                </div>
+            </div>
+
+            <footer id="footer">
+                <!-- Footer content will be injected by footer.js -->
+            </footer>
+        </div>
+
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/browser.min.js"></script>
+        <script src="../../assets/js/breakpoints.min.js"></script>
+        <script src="../../assets/js/util.js"></script>
+        <script src="../../assets/js/main.js"></script>
+        <script src="../../assets/js/flickity.js"></script>
+        <script src="../../assets/js/navigation.js"></script>
+        <script src="../../assets/js/footer.js"></script>
+        <script src="../../assets/js/header.js"></script>
+    </body>
+    </html>
+
