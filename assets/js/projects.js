@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "ReviMo @ Mass Robotics",
-        thumbnail: "projects/Revimo/pic01.png",
+        thumbnail: "projects/revimo/pic01.png",
         page: "/projects/revimo/",
         description: "Summer 2025 Internship",
         type: "internship",
@@ -43,21 +43,21 @@ const projects = [
     },
     {
         title: "Frisbee Launcher",
-        thumbnail: "projects/Frisbee/pic01.png",
+        thumbnail: "projects/frisbee/pic01.png",
         page: "/projects/frisbee/",
         description: "Spring 2024, Assistive frisbee launcher",
         type: "project",
     },
     {
         title: "Hopper",
-        thumbnail: "projects/Hopper/hopper_pic01.png",
+        thumbnail: "projects/hopper/hopper_pic01.png",
         page: "/projects/hopper/",
         description: "Fall 2024, Biomechanical hopping machine",
         type: "project",
     },
     {
         title: "Mams SISO",
-        thumbnail: "projects/SISO/thumbnail.png",
+        thumbnail: "projects/siso/thumbnail.png",
         page: "/projects/siso/",
         description: "2022-2024, Digital Sign In/Out System",
         type: "project",
