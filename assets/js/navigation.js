@@ -145,16 +145,16 @@ function getProjectNameFromPath() {
         const folderName = projectMatch[1];
         // Convert folder name to display name
         const displayNames = {
-            'Revimo': 'revimo',
+            'revimo': 'revimo',
             'boxing_robot': 'boxing_robot',
             'techroast': 'techroast',
             'evolv': 'evolv', 
-            'Frisbee': 'frisbee',
-            'Hopper': 'hopper',
-            'FRC190': 'frc190',
+            'frisbee': 'frisbee',
+            'hopper': 'hopper',
+            'frc190': 'frc190',
             'plane': 'plane',
             'ros_fsm': 'ros_fsm',
-            'SISO': 'siso',
+            'siso': 'siso',
             'steam_engine': 'steam_engine',
             'umass': 'umass'
         };
