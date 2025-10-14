@@ -3,7 +3,7 @@
 /* Tiles Grid */
 .tiles {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-template-columns: repeat(3, 1fr);
 	gap: 0.875rem;
 	position: relative;
 	margin: 0 -1em 2rem -1em;
@@ -16,8 +16,11 @@
 	position: relative;
 	width: 100%;
 	border-radius: 0;
-	box-shadow: none;
-	aspect-ratio: 4/3;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	background: #ffffff;
+	display: flex;
+	flex-direction: column;
 }
 
 .tiles article > .image {
@@ -28,7 +31,7 @@
 	width: 100%;
 	border-radius: 0;
 	overflow: hidden;
-	height: 100%;
+	height: 200px;
 }
 
 .tiles article > .image img {
@@ -40,59 +43,24 @@
 	border-radius: 0;
 }
 
-.tiles article > .image:before {
-	pointer-events: none;
-	-webkit-transition: background-color 0.25s ease, opacity 0.25s ease;
-	transition: background-color 0.25s ease, opacity 0.25s ease;
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 1.0;
-	z-index: 1;
-	opacity: 0.8;
-}
-
-.tiles article > .image:after {
-	pointer-events: none;
-	-webkit-transition: opacity 0.25s ease;
-	transition: opacity 0.25s ease;
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	opacity: 0.25;
-	z-index: 2;
-}
+/* Removed overlay effects for clean image display */
 
 .tiles article > a {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	-webkit-transition: background-color 0.25s ease, -webkit-transform 0.25s ease;
 	transition: background-color 0.25s ease, transform 0.25s ease;
-	position: absolute;
-	top: 0;
-	left: 0;
+	position: static;
 	width: 100%;
-	height: 100%;
-	padding: 1em;
-	border-radius: 4px;
+	padding: 0.5em 0.75em 0.75em 0.75em;
+	border-radius: 0;
 	border-bottom: 0;
-	color: #ffffff00;
-	text-align: center;
+	color: #ffffff;
+	text-align: left;
 	text-decoration: none;
 	z-index: 3;
+	background: #2d2d2d;
+	flex: 1;
 }
 
 .tiles article > a h2,
@@ -107,14 +75,17 @@
 
 .tiles article > a:hover {
 	color: #ffffff !important;
+	background: #404040;
 }
 
 .tiles article > a h2 {
-	margin: 0;
-	font-size: 0.9em;
-	opacity: 0;
+	margin: 0 0 0.15em 0;
+	font-size: 1.125rem;
+	font-weight: 600;
+	opacity: 1;
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
+	color: #ffffff;
 }
 
 .tiles article > a .content {
@@ -122,9 +93,10 @@
 	transition: opacity 0.2s ease;
 	width: 100%;
 	line-height: 1.4;
-	margin-top: 0.35em;
-	opacity: 0 !important;
-	font-size: 0.85em;
+	margin-top: 0;
+	opacity: 1 !important;
+	font-size: 0.875rem;
+	color: #d1d5db;
 }
 
 .tiles article > a .content > :last-child {
@@ -132,30 +104,16 @@
 }
 
 /* Tiles hover effects */
-body:not(.is-touch) .tiles article:hover > .image {
-	-webkit-transform: none;
-	transform: none;
-}
-
-body:not(.is-touch) .tiles article:hover > .image:before {
-	background-color: #696969;
-	opacity: 0.9;
-}
-
 body:not(.is-touch) .tiles article:hover {
-	box-shadow: none;
-}
-
-body:not(.is-touch) .tiles article:hover > .image:after {
-	opacity: 0;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	transform: translateY(-2px);
 }
 
 body:not(.is-touch) .tiles article:hover .content p {
-	color: #ffffff !important;
+	color: #d1d5db !important;
 }
 
 body:not(.is-touch) .tiles article:hover a h2 {
-	opacity: 1;
 	color: #ffffff !important;
 }
 
@@ -163,9 +121,9 @@ body:not(.is-touch) .tiles article:hover .content {
 	opacity: 1 !important;
 }
 
-/* Force content to be hidden by default */
+/* Content is always visible */
 .tiles article .content {
-	opacity: 0 !important;
+	opacity: 1 !important;
 }
 
 /* Touch device overrides */
@@ -330,8 +288,12 @@ body.is-touch .tiles article .content {
 	.tiles {
 		margin: 0 -0.75em 2rem -0.75em;
 		padding: 0.875rem;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 0.75rem;
+	}
+	
+	.tiles article > .image {
+		height: 180px;
 	}
 	
 	.certificates-grid {
@@ -351,8 +313,12 @@ body.is-touch .tiles article .content {
 	.tiles {
 		margin: 0 -0.75em 2rem -0.75em;
 		padding: 0.875rem;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(2, 1fr);
 		gap: 0.625rem;
+	}
+	
+	.tiles article > .image {
+		height: 160px;
 	}
 	
 	.certificates-grid {
@@ -376,10 +342,22 @@ body.is-touch .tiles article .content {
 		gap: 0.5rem;
 	}
 	
-	.tiles article:hover > .image {
-		-webkit-transform: scale(1.0);
-		transform: scale(1.0);
+	.tiles article > .image {
+		height: 150px;
 	}
+	
+	.tiles article > a {
+		padding: 0.4em 0.6em 0.6em 0.6em;
+	}
+	
+	.tiles article > a h2 {
+		font-size: 1rem;
+	}
+	
+	.tiles article > a .content {
+		font-size: 0.8rem;
+	}
+}
 	
 	.certificates-grid {
 		display: grid !important;
@@ -447,6 +425,24 @@ body.is-touch .tiles article .content {
 		grid-template-columns: 1fr;
 		gap: 0.375rem;
 	}
+	
+	.tiles article > .image {
+		height: 120px;
+	}
+	
+	.tiles article > a {
+		padding: 0.3em 0.4em 0.4em 0.4em;
+	}
+	
+	.tiles article > a h2 {
+		font-size: 0.95rem;
+		margin-bottom: 0.15em;
+	}
+	
+	.tiles article > a .content {
+		font-size: 0.75rem;
+	}
+}
 	
 	.certificates-grid {
 		display: grid !important;
