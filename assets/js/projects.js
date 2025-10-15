@@ -91,14 +91,16 @@ function createProject(project) {
     const targetAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
     return `
         <article class="style1">
-            <span class="image">
-                <img src="${project.thumbnail}"
-                    alt="${project.description}" />
-            </span>
             <a href="${project.page}"${targetAttr}>
-                <h2>${project.title}</h2>
-                <div class="content">
-                    <p>${project.description}</p>
+                <span class="image">
+                    <img src="${project.thumbnail}"
+                        alt="${project.description}" />
+                </span>
+                <div class="text-content">
+                    <h2>${project.title}</h2>
+                    <div class="content">
+                        <p>${project.description}</p>
+                    </div>
                 </div>
             </a>
         </article>
