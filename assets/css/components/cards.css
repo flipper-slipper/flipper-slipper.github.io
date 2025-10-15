@@ -8,6 +8,7 @@
 	position: relative;
 	margin: 0 -1em 2rem -1em;
 	padding: 1rem;
+	align-items: stretch; /* Ensure equal heights */
 }
 
 .tiles article {
@@ -50,6 +51,8 @@
 	flex-direction: column;
 	padding: 0.5em 0.75em 0.75em 0.75em;
 	background: #2d2d2d;
+	flex-grow: 1; /* Fill available space */
+	justify-content: flex-end; /* Push content to bottom */
 }
 
 .tiles article > a {
@@ -66,6 +69,7 @@
 	text-decoration: none;
 	z-index: 3;
 	background: #ffffff;
+	height: 100%; /* Fill parent height */
 }
 
 .tiles article > a h2,

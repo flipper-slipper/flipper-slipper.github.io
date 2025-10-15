@@ -1065,7 +1065,7 @@ img {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1400px) {
 	.nav-breadcrumb {
 		position: fixed;
 		top: 3rem;
@@ -1266,9 +1266,7 @@ img {
    MOBILE LAYOUT ADJUSTMENTS
    ======================================== */
 @media screen and (max-width: 768px) {
-	.progress-indicator {
-		display: none;
-	}
+	/* Progress indicator already hidden at 1400px, no need to repeat */
 
 	.certificates-grid {
 		display: grid !important;
