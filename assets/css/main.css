@@ -801,6 +801,11 @@ h2 + .projects-filter {
 	margin-right: calc(25% + 0.5rem);
 }
 
+/* Tighter spacing between name and education/location */
+#intro h1 {
+	margin-bottom: 0.35rem;
+}
+
 #intro h1,
 #intro .info-text,
 #intro .social-buttons,
@@ -822,7 +827,7 @@ h2 + .projects-filter {
 
 @media screen and (max-width: 980px) {
 	#intro {
-		margin: 0 -0.75em 2rem -0.75em;
+		margin: 0 -0.75em 1rem -0.75em;
 		padding: 0.875rem;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -832,19 +837,21 @@ h2 + .projects-filter {
 	#intro .image.thumbnail {
 		position: static;
 		width: 50%;
-		align-self: flex-end;
+		align-self: center;
+		order: -1; /* Show image first on mobile */
 		right: auto;
 		top: auto;
 	}
 
 	#intro .text-content {
 		margin-right: 0;
+		order: 0;
 	}
 }
 
 @media screen and (max-width: 736px) {
 	#intro {
-		margin: 0 -0.5em 2rem -0.5em;
+		margin: 0 -0.5em 0.75rem -0.5em;
 		padding: 1rem;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -854,19 +861,21 @@ h2 + .projects-filter {
 	#intro .image.thumbnail {
 		position: static;
 		width: 50%;
-		align-self: flex-end;
+		align-self: center;
+		order: -1; /* Show image first on mobile */
 		right: auto;
 		top: auto;
 	}
 
 	#intro .text-content {
 		margin-right: 0;
+		order: 0;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	#intro {
-		margin: 0 -0.5em 2rem -0.5em;
+		margin: 0 -0.5em 0.75rem -0.5em;
 		padding: 0.75rem;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -877,12 +886,14 @@ h2 + .projects-filter {
 		position: static;
 		width: 100%;
 		align-self: center;
+		order: -1; /* Show image first on small mobile */
 		right: auto;
 		top: auto;
 	}
 
 	#intro .text-content {
 		margin-right: 0;
+		order: 0;
 	}
 }
 
@@ -1023,6 +1034,13 @@ img {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 0 4rem 0 1rem;
+}
+
+/* Ensure content isn't hidden under fixed breadcrumb on mobile */
+@media screen and (max-width: 1024px) {
+	.nav-breadcrumb + #main {
+		padding-top: 64px !important; /* offset for fixed breadcrumb height */
+	}
 }
 
 .nav-button {
