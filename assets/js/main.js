@@ -206,3 +206,16 @@
 	document.head.appendChild(loader);
 	document.head.appendChild(inline);
 })();
+
+// Inject Cloudflare Web Analytics across all pages
+(function injectCloudflareAnalytics() {
+	if (typeof document === 'undefined') return;
+	if (document.getElementById('cf-web-analytics')) return;
+
+	var cf = document.createElement('script');
+	cf.id = 'cf-web-analytics';
+	cf.defer = true;
+	cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+	cf.setAttribute('data-cf-beacon', '{"token": "93df2f333ca142318ab882a14586be76"}');
+	document.head.appendChild(cf);
+})();
