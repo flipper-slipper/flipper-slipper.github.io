@@ -13,6 +13,19 @@
 		<link rel="stylesheet" href="../../assets/css/main.css" />
 		<link rel="stylesheet" href="../../assets/css/flickity.css" media="screen">
 		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+		<style>
+			@media screen and (max-width: 768px) {
+				#about-row {
+					display: flex;
+					flex-direction: column-reverse; /* show reel above text */
+					gap: 1rem !important;
+				}
+				#about-row > div {
+					flex: none !important;
+					width: 100% !important;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -42,7 +55,7 @@
 							
 							<hr class="project-divider">
 							
-							<div class="row" style="display: flex; align-items: flex-start; gap: 2rem;">
+						<div id="about-row" class="row" style="display: flex; align-items: flex-start; gap: 2rem;">
 								<div style="flex: 1;">
 									<h2>About</h2>
 									<p> 
