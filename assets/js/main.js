@@ -183,3 +183,26 @@
 			});
 
 })(jQuery);
+
+// Inject Google Analytics 4 across all pages
+(function injectGA4() {
+	if (typeof document === 'undefined') return;
+	if (document.getElementById('ga4-tag-script')) return;
+
+	var loader = document.createElement('script');
+	loader.id = 'ga4-tag-loader';
+	loader.async = true;
+	loader.src = 'https://www.googletagmanager.com/gtag/js?id=G-RQVWMTC537';
+
+	var inline = document.createElement('script');
+	inline.id = 'ga4-tag-script';
+	inline.text = (
+		"window.dataLayer = window.dataLayer || [];" +
+		"function gtag(){dataLayer.push(arguments);}" +
+		"gtag('js', new Date());" +
+		"gtag('config', 'G-RQVWMTC537');"
+	);
+
+	document.head.appendChild(loader);
+	document.head.appendChild(inline);
+})();
