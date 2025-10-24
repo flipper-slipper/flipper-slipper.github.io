@@ -17,7 +17,7 @@ const projects = [
         title: "Techroast",
         thumbnail: "projects/techroast/pic01.png",
         page: "/projects/techroast/",
-        description: "Custom shirts and Meta Ray-Ban livestreaming",
+        description: "Hacking a comedy show",
         type: "project",
     },
     {
@@ -38,7 +38,7 @@ const projects = [
         title: "Mini Wind Tunnel",
         thumbnail: "projects/wind_tunnel/pic01.png",
         page: "/projects/wind_tunnel/",
-        description: "Compact wind tunnel for aerodynamic testing",
+        description: "Visualizing Airflow",
         type: "project",
     },
     {
@@ -73,7 +73,7 @@ const projects = [
         title: "UMass Health Navigation App",
         thumbnail: "projects/umass/pic01.png",
         page: "/projects/umass/",
-        description: "Mobile App development for UMass Health",
+        description: "App development for UMass Health",
         type: "project",
     },
     {
