@@ -67,9 +67,9 @@
                     <h2>Gallery</h2>
                     <div class="carousel large"
                         data-flickity='{ "imagesLoaded": true, "percentPosition": false, "wrapAround": true }'>
-                        <img src="pic02.jpg">
-                        <img src="pic01.png">
-                        <img src="pic02.svg">
+                        <img src="pic02.jpg" class="gallery-image" data-gallery="siso-gallery" data-index="0">
+                        <img src="pic01.png" class="gallery-image" data-gallery="siso-gallery" data-index="1">
+                        <img src="pic02.svg" class="gallery-image" data-gallery="siso-gallery" data-index="2">
                     </div>
         
                     <h2>Poster</h2>
@@ -89,6 +89,18 @@
         
         </div>
     
+        <!-- Image Gallery Modal -->
+        <div id="gallery-modal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close">&times;</button>
+                <button class="modal-nav prev" id="modal-prev">‹</button>
+                <button class="modal-nav next" id="modal-next">›</button>
+                <img id="modal-image" class="modal-image" src="" alt="">
+                <div class="modal-counter" id="modal-counter"></div>
+                <div class="modal-thumbnails" id="modal-thumbnails"></div>
+            </div>
+        </div>
+    
         <!-- Scripts -->
         <script src="../../assets/js/jquery.min.js"></script>
         <script src="../../assets/js/browser.min.js"></script>
@@ -102,6 +114,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js" integrity="sha512-judXDFLnOTJsUwd55lhbrX3uSoSQSOZR6vNrsll+4ViUFv+XOIr/xaIK96soMj6s5jVszd7I97a0H+WhgFwTEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js" integrity="sha512-mq6TSOBEH8eoYFBvyDQOQf63xgTeAk7ps+MHGLWZ6Byz0BqQzrP+3GIgYL+KvLaWgpL8XgDVbIRYQeLa3Vqu6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="../../assets/js/flickity.js"></script>
+        <script src="../../assets/js/gallery-modal.js"></script>
 
     </body>
 </html>

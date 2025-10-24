@@ -3,8 +3,7 @@
 
 const footerContent = `
 	<div class="inner">
-		<hr class="footer-line">
-		<p class="footer-text">&copy; 2025 David Barsoum</p>
+		<p class="footer-text">&copy; 2025 David Barsoum, <a href="mailto:dbarsoum@olin.edu">dbarsoum@olin.edu</a></p>
 	</div>
 `;
 
@@ -13,7 +12,14 @@ function injectFooter() {
     const footer = document.getElementById('footer');
     if (footer) {
         footer.innerHTML = footerContent;
+        setupFooterBehavior();
     }
+}
+
+// Function to setup footer behavior
+function setupFooterBehavior() {
+    // Simple footer behavior - no complex logic needed
+    return;
 }
 
 // Inject footer when DOM is loaded

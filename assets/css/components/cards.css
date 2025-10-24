@@ -145,13 +145,14 @@ body.is-touch .tiles article .content {
 
 /* Certificates Grid */
 .certificates-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
 	position: relative;
 	margin: 0 -1em 2rem -1em;
 	padding: 1rem;
 	width: calc(100% + 2em);
+	justify-content: flex-start;
 }
 
 .certificates-grid > .project-card {
@@ -159,6 +160,12 @@ body.is-touch .tiles article .content {
 	margin: 0;
 	flex-shrink: 0;
 	aspect-ratio: 2/1;
+}
+
+/* Override for paper cards */
+.certificates-grid > .paper-card {
+	width: calc(50% - 0.375rem) !important;
+	aspect-ratio: unset !important;
 }
 
 /* Project Card Base Styles */
@@ -664,6 +671,290 @@ body.is-touch .tiles article .content {
 		min-height: 2.2em !important;
 		overflow: visible !important;
 		white-space: normal !important;
+	}
+}
+
+/* ========================================
+   PAPERS GRID - CLEAN TWO COLUMN LAYOUT
+   ======================================== */
+
+/* Papers Grid Container */
+.papers-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 0 -1em 2rem -1em;
+	padding: 1rem;
+	width: calc(100% + 2em);
+}
+
+/* Paper Card - Clean Two Column Layout */
+.papers-grid .paper-card {
+	width: calc(50% - 0.375rem);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	border: 2px solid #dee2e6;
+	border-radius: 10px;
+	padding: 0.75rem;
+	margin-bottom: 0.75rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Removed blue left border line */
+
+.papers-grid .paper-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(255, 154, 60, 0.15);
+	border-color: #ff9a3c;
+}
+
+/* Removed hover effect for blue line */
+
+/* Papers Grid Responsive Design */
+@media screen and (max-width: 768px) {
+	.papers-grid .paper-card {
+		width: calc(50% - 0.375rem);
+		flex-direction: column;
+		text-align: center;
+		padding: 0.75rem;
+	}
+	
+	.papers-grid .paper-thumbnail {
+		width: 130px !important;
+		height: 98px !important;
+		margin-right: 0;
+		margin-bottom: 0.75rem;
+		align-self: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.papers-grid .paper-card {
+		width: 100%;
+		flex-direction: row;
+		text-align: left;
+		padding: 0.75rem;
+	}
+	
+	.papers-grid .paper-thumbnail {
+		width: 150px !important;
+		height: 112px !important;
+		margin-right: 1rem;
+		margin-bottom: 0;
+		align-self: flex-start;
+	}
+}
+
+/* Extra small mobile screens */
+@media screen and (max-width: 360px) {
+	.papers-grid .paper-card {
+		padding: 0.5rem;
+	}
+	
+	.papers-grid .paper-thumbnail {
+		width: 130px !important;
+		height: 98px !important;
+		margin-right: 0.75rem;
+	}
+	
+	.papers-grid .paper-title {
+		font-size: 0.9rem;
+	}
+	
+	.paper-description {
+		font-size: 0.75rem;
+	}
+}
+
+/* ========================================
+   PAPER CARDS - COMPLETELY DIFFERENT STYLE
+   ======================================== */
+
+/* Paper Card Base Styles - Horizontal Layout */
+.certificates-grid .paper-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	border: 2px solid #dee2e6;
+	border-radius: 10px;
+	padding: 0.75rem;
+	margin-bottom: 0.75rem;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	width: calc(50% - 0.375rem) !important;
+	flex-shrink: 0;
+}
+
+/* Removed blue left border line */
+
+.paper-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+	border-color: #007bff;
+}
+
+/* Removed hover effect for blue line */
+
+/* Paper Thumbnail */
+.paper-thumbnail {
+	flex-shrink: 0;
+	width: 160px;
+	height: 120px;
+	margin-right: 1.25rem;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #ffffff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.paper-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+/* Paper Content */
+.paper-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.paper-header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.papers-grid .paper-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #000000 !important;
+	margin: 0;
+	line-height: 1.3;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.paper-description {
+	color: #6c757d;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+/* Paper Tags */
+.paper-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.paper-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.25rem 0.75rem;
+	background: #ffffff;
+	color: #000000;
+	border: 1px solid #000000;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 500;
+	text-transform: none;
+	letter-spacing: 0.025em;
+	box-shadow: none;
+	transition: all 0.2s ease;
+}
+
+.paper-badge:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Production Icon for Papers */
+.paper-card .production-icon {
+	width: 18px;
+	height: 18px;
+	color: #28a745;
+}
+
+/* Responsive Design for Paper Cards */
+@media screen and (max-width: 768px) {
+	.certificates-grid .paper-card {
+		width: calc(50% - 0.375rem) !important;
+		flex-direction: column;
+		text-align: center;
+		padding: 0.75rem;
+	}
+	
+	.paper-thumbnail {
+		width: 60px;
+		height: 45px;
+		margin-right: 0;
+		margin-bottom: 0.5rem;
+		align-self: center;
+	}
+	
+	.papers-grid .paper-title {
+		font-size: 1rem;
+		justify-content: center;
+		color: #000000 !important;
+	}
+	
+	.paper-description {
+		font-size: 0.85rem;
+	}
+	
+	.paper-tags {
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.certificates-grid .paper-card {
+		width: 100% !important;
+		padding: 0.75rem;
+		flex-direction: row;
+		text-align: left;
+	}
+	
+	.paper-thumbnail {
+		width: 50px;
+		height: 37px;
+		margin-right: 0.75rem;
+		margin-bottom: 0;
+		align-self: flex-start;
+	}
+	
+	.papers-grid .paper-title {
+		font-size: 0.95rem;
+		justify-content: flex-start;
+		color: #000000 !important;
+	}
+	
+	.paper-description {
+		font-size: 0.8rem;
+	}
+	
+	.paper-badge {
+		font-size: 0.7rem;
+		padding: 0.15rem 0.5rem;
 	}
 }
 
