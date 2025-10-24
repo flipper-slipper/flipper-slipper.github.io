@@ -7,10 +7,10 @@ const projects = [
         type: "internship",
     },
     {
-        title: "Boxing Robot",
-        thumbnail: "projects/boxing_robot/pic01.png",
-        page: "/projects/boxing_robot/",
-        description: "Vision-guided 5-DOF manipulator",
+        title: "C++ Particle Filter",
+        thumbnail: "projects/particle_filter/particle_thumbnail-01.png",
+        page: "/projects/particle_filter/",
+        description: "Robotics Localization Algorithm",
         type: "project",
     },
     {
@@ -25,6 +25,13 @@ const projects = [
         thumbnail: "projects/ros_fsm/pic01.png",
         page: "/projects/ros_fsm/",
         description: "FSM robot with wall follow and avoidance",
+        type: "project",
+    },
+    {
+        title: "Boxing Robot",
+        thumbnail: "projects/boxing_robot/pic01.png",
+        page: "/projects/boxing_robot/",
+        description: "Vision-guided 5-DOF manipulator",
         type: "project",
     },
     {

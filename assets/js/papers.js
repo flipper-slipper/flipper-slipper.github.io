@@ -5,35 +5,40 @@ const papers = [
         url: "papers/himcm2023.pdf",
         description: "Math modeling paper written for 2023 HiMCM challenge",
         tags: ["USA Outstanding Winner (1st/967)", "NCTM Award"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        thumbnail: "papers/dandelion.png"
     },
     {
         title: "Land Use Analysis",
         url: "papers/immc2023.pdf",
         description: "Math modeling paper written for 2023 IMMC challenge",
         tags: ["Intl. Meritorious (Top 6)"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        thumbnail: "papers/landuse.png"
     },
     {
         title: "Honeybee Populations",
         url: "/papers/himcm2022.pdf",
         description: "Math modeling paper written for 2022 HiMCM challenge",
         tags: ["USA Finalist (Top 6%)"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        thumbnail: "papers/honeybee.png"
     },
     {
         title: "E-Bike Demand",
         url: "/papers/mathworks2023.pdf",
         description: "Math modeling paper written for 2022 M3 Modeling challenge",
         tags: ["2nd Round Selection"],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        thumbnail: "papers/ebike.png"
     },
     {
         title: "Forest Fires",
         url: "/papers/modsim_project3.pdf",
         description: "Math modeling paper written for ModSim class",
         tags: [],
-        hasProductionIcon: false
+        hasProductionIcon: false,
+        thumbnail: "papers/forrestfires.png"
     },
 ];
 
@@ -45,21 +50,20 @@ function createCard(paper) {
         </svg>`;
 
     return `
-        <div class="project-card" onclick="window.open('${paper.url}', '_blank')">
-            <div class="card-header">
-                <div class="card-header-content">
-                    <div class="card-title-wrapper">
-                        <h3 class="card-title">
-                            ${paper.title}
-                            ${paper.hasProductionIcon ? productionIcon : ''}
-                        </h3>
-                    </div>
-                    <p class="card-description">${paper.description}</p>
-                </div>
+        <div class="paper-card" onclick="window.open('${paper.url}', '_blank')">
+            <div class="paper-thumbnail">
+                <img src="${paper.thumbnail}" alt="${paper.title}" />
             </div>
-            <div class="card-content">
-                <div class="tags-wrapper">
-                    ${paper.tags.map(tag => `<span class="badge">${tag}</span>`).join('')}
+            <div class="paper-content">
+                <div class="paper-header">
+                    <h3 class="paper-title">
+                        ${paper.title}
+                        ${paper.hasProductionIcon ? productionIcon : ''}
+                    </h3>
+                    <p class="paper-description">${paper.description}</p>
+                </div>
+                <div class="paper-tags">
+                    ${paper.tags.map(tag => `<span class="paper-badge">${tag}</span>`).join('')}
                 </div>
             </div>
         </div>
@@ -69,6 +73,7 @@ function createCard(paper) {
 // Finally, your render function and event listener
 function renderPapers() {
     const container = document.getElementById('papers-grid');
+    container.className = 'papers-grid'; // Add specific class for papers
     container.innerHTML = papers.map(paper => createCard(paper)).join('');
 }
 

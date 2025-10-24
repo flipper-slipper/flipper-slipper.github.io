@@ -86,6 +86,15 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 	color: inherit;
 }
 
+/* Override gradient for paper titles */
+.papers-grid .paper-title {
+	background: none !important;
+	-webkit-background-clip: initial !important;
+	-webkit-text-fill-color: initial !important;
+	background-clip: initial !important;
+	color: #000000 !important;
+}
+
 h2 {
 	font-size: 2em;
 }

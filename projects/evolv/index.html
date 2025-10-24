@@ -64,11 +64,11 @@
 						<h2>Gallery</h2>
 							
 							<div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
-								<img src="pic02.png" alt="Evolv Gallery Image 1" style="width: 100%; height: auto; border-radius: 8px;">
-								<img src="pic03.png" alt="Evolv Gallery Image 2" style="width: 100%; height: auto; border-radius: 8px;">
-								<img src="pic04.png" alt="Evolv Gallery Image 3" style="width: 100%; height: auto; border-radius: 8px;">
-								<img src="pic05.png" alt="Evolv Gallery Image 4" style="width: 100%; height: auto; border-radius: 8px;">
-								<img src="pic06.png" alt="Evolv Gallery Image 5" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic02.png" alt="Evolv Gallery Image 1" class="gallery-image" data-gallery="evolv-gallery" data-index="0" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic03.png" alt="Evolv Gallery Image 2" class="gallery-image" data-gallery="evolv-gallery" data-index="1" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic04.png" alt="Evolv Gallery Image 3" class="gallery-image" data-gallery="evolv-gallery" data-index="2" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic05.png" alt="Evolv Gallery Image 4" class="gallery-image" data-gallery="evolv-gallery" data-index="3" style="width: 100%; height: auto; border-radius: 8px;">
+								<img src="pic06.png" alt="Evolv Gallery Image 5" class="gallery-image" data-gallery="evolv-gallery" data-index="4" style="width: 100%; height: auto; border-radius: 8px;">
 							</div>
 						</div>
 					</div>
@@ -80,6 +80,18 @@
 
 			</div>
 
+		<!-- Image Gallery Modal -->
+		<div id="gallery-modal" class="modal-overlay">
+			<div class="modal-content">
+				<button class="modal-close" id="modal-close">&times;</button>
+				<button class="modal-nav prev" id="modal-prev">‹</button>
+				<button class="modal-nav next" id="modal-next">›</button>
+				<img id="modal-image" class="modal-image" src="" alt="">
+				<div class="modal-counter" id="modal-counter"></div>
+				<div class="modal-thumbnails" id="modal-thumbnails"></div>
+			</div>
+		</div>
+
 		<!-- Scripts -->
 			<script src="../../assets/js/jquery.min.js"></script>
 			<script src="../../assets/js/browser.min.js"></script>
@@ -89,6 +101,7 @@
 			<script src="../../assets/js/flickity.js"></script>
 			<script src="../../assets/js/navigation.js"></script>
 			<script src="../../assets/js/footer.js"></script>
+			<script src="../../assets/js/gallery-modal.js"></script>
 
 	</body>
 </html>

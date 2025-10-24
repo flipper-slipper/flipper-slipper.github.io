@@ -58,8 +58,8 @@
 					<h2>Gallery</h2>
 					<div class="carousel large"
 							data-flickity='{ "imagesLoaded": true, "percentPosition": false, "wrapAround": true }'>
-							<img src="pic02.png">
-							<img src="pic03.png">
+							<img src="pic02.png" class="gallery-image" data-gallery="umass-gallery" data-index="0">
+							<img src="pic03.png" class="gallery-image" data-gallery="umass-gallery" data-index="1">
 					</div>
 				</div>
 			</div>
@@ -67,6 +67,18 @@
 			<footer id="footer">
 				<!-- Footer content will be injected by footer.js -->
 			</footer>
+		</div>
+
+		<!-- Image Gallery Modal -->
+		<div id="gallery-modal" class="modal-overlay">
+			<div class="modal-content">
+				<button class="modal-close" id="modal-close">&times;</button>
+				<button class="modal-nav prev" id="modal-prev">‹</button>
+				<button class="modal-nav next" id="modal-next">›</button>
+				<img id="modal-image" class="modal-image" src="" alt="">
+				<div class="modal-counter" id="modal-counter"></div>
+				<div class="modal-thumbnails" id="modal-thumbnails"></div>
+			</div>
 		</div>
 
 		<script src="../../assets/js/jquery.min.js"></script>
@@ -78,5 +90,6 @@
 		<script src="../../assets/js/navigation.js"></script>
 		<script src="../../assets/js/footer.js"></script>
 		<script src="../../assets/js/header.js"></script>
+		<script src="../../assets/js/gallery-modal.js"></script>
 	</body>
 </html>
