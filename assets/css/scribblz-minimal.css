@@ -1,0 +1,83 @@
+/* Scribblz Cartoon Button Overlay */
+/* Import Permanent Marker Font for button */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/* Image Container for Button Positioning */
+.scribblz-image-container {
+  position: relative;
+  margin: 2rem 0;
+}
+
+/* Cartoon-Style Website Button */
+.scribblz-cartoon-button {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  padding: 1rem 2.5rem;
+  border: 4px solid #000;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 
+    0 6px 0 #000,
+    0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+  transform: rotate(-8deg);
+}
+
+/* Arrow icon to indicate new tab */
+.scribblz-cartoon-button::after {
+  content: ' ↗';
+  font-size: 1.2em;
+  margin-left: 0.3em;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.scribblz-cartoon-button:hover {
+  transform: rotate(-8deg) translateY(3px);
+  box-shadow: 
+    0 3px 0 #000,
+    0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scribblz-cartoon-button:active {
+  transform: rotate(-8deg) translateY(6px);
+  box-shadow: 
+    0 0 0 #000,
+    0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 980px) {
+  .scribblz-cartoon-button {
+    position: static;
+    transform: rotate(0deg);
+    display: block;
+    margin: 2rem auto;
+    width: fit-content;
+  }
+
+  .scribblz-cartoon-button:hover {
+    transform: translateY(3px);
+  }
+
+  .scribblz-cartoon-button:active {
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 480px) {
+  .scribblz-cartoon-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+}

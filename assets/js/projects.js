@@ -1,5 +1,12 @@
 const projects = [
     {
+        title: "Scribblz",
+        thumbnail: "projects/scribblz/scribblz-thumbnail.png",
+        page: "/projects/scribblz/",
+        description: "Window climbing art robot",
+        type: "project",
+    },
+    {
         title: "ReviMo @ Mass Robotics",
         thumbnail: "projects/revimo/pic01.png",
         page: "/projects/revimo/",

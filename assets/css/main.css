@@ -141,7 +141,7 @@
 .projects-heading {
 	margin-bottom: 0.35em;
 	clear: both;
-	margin-top: 0.1rem;
+	margin-top: 0;
 }
 
 #papers h2 {
@@ -813,7 +813,7 @@ h2 + .projects-filter {
 .profile-content {
 	display: flex;
 	align-items: flex-start;
-	margin-bottom: 20px;
+	margin-bottom: 0;
 }
 
 .profile-content p {
@@ -826,12 +826,12 @@ h2 + .projects-filter {
 }
 
 .info-text {
-	margin: 0px 0;
+	margin: 0.25rem 0 0 0;
 }
 
 .info-text p {
-	margin: 5px 0;
-	font-size: 0.95em;
+	margin: 0.125rem 0;
+	font-size: 0.85em;
 	font-family: inherit;
 	font-weight: 400;
 	color: #333;
@@ -845,7 +845,7 @@ h2 + .projects-filter {
 .location,
 .location a {
 	font-family: inherit;
-	font-size: 0.95em;
+	font-size: 0.85em;
 	font-weight: 400;
 }
 
@@ -862,8 +862,8 @@ h2 + .projects-filter {
 	justify-content: space-between;
 	gap: 1rem;
 	position: relative;
-	margin: 0 -1em 2rem -1em;
-	padding: 1rem;
+	margin: 0 -1em 4rem -1em;
+	padding: 1rem 1rem 0 1rem;
 }
 
 #intro .image.thumbnail {
@@ -892,7 +892,7 @@ h2 + .projects-filter {
 
 /* Tighter spacing between name and education/location */
 #intro h1 {
-	margin-bottom: 0.35rem;
+	margin-bottom: 0.2rem;
 }
 
 #intro h1,
@@ -900,12 +900,17 @@ h2 + .projects-filter {
 #intro .social-buttons,
 #intro .profile-content {
 	margin-right: 0;
+	margin-bottom: 0;
+}
+
+#intro .profile-content p {
+	margin-bottom: 0;
 }
 
 @media screen and (max-width: 1280px) {
 	#intro {
 		margin: 0 -0.75em 2rem -0.75em;
-		padding: 0.875rem;
+		padding: 0.875rem 0.875rem 0 0.875rem;
 		gap: 0.875rem;
 	}
 
@@ -916,8 +921,8 @@ h2 + .projects-filter {
 
 @media screen and (max-width: 980px) {
 	#intro {
-		margin: 0 -0.75em 1rem -0.75em;
-		padding: 0.875rem;
+		margin: 0 -0.75em 2rem -0.75em;
+		padding: 0.875rem 0.875rem 0 0.875rem;
 		flex-direction: column;
 		justify-content: flex-start;
 		gap: 0.75rem;
@@ -940,8 +945,8 @@ h2 + .projects-filter {
 
 @media screen and (max-width: 736px) {
 	#intro {
-		margin: 0 -0.5em 0.75rem -0.5em;
-		padding: 1rem;
+		margin: 0 -0.5em 2rem -0.5em;
+		padding: 1rem 1rem 0 1rem;
 		flex-direction: column;
 		justify-content: flex-start;
 		gap: 1rem;
@@ -964,8 +969,8 @@ h2 + .projects-filter {
 
 @media screen and (max-width: 480px) {
 	#intro {
-		margin: 0 -0.5em 0.75rem -0.5em;
-		padding: 0.75rem;
+		margin: 0 -0.5em 2rem -0.5em;
+		padding: 0.75rem 0.75rem 0 0.75rem;
 		flex-direction: column;
 		justify-content: flex-start;
 		gap: 0.75rem;
@@ -989,14 +994,14 @@ h2 + .projects-filter {
 /* Additional mobile breakpoints for better responsiveness */
 @media screen and (max-width: 360px) {
 	#intro {
-		padding: 0.5rem;
+		padding: 0.5rem 0.5rem 0 0.5rem;
 		gap: 0.5rem;
 	}
 }
 
 @media screen and (max-width: 320px) {
 	#intro {
-		padding: 0.25rem;
+		padding: 0.25rem 0.25rem 0 0.25rem;
 		gap: 0.25rem;
 	}
 }
@@ -1383,7 +1388,7 @@ img {
 		font-weight: 500 !important;
 		color: #000000 !important;
 		font-size: 2em !important;
-		margin: 0 0 0.2em 0 !important;
+		margin: 0 0 1em 0 !important;
 		letter-spacing: -0.035em !important;
 	}
 
@@ -1392,7 +1397,7 @@ img {
 		font-weight: 500 !important;
 		color: #000000 !important;
 		font-size: 2em !important;
-		margin: 0 0 0.2em 0 !important;
+		margin: 0 0 1em 0 !important;
 		letter-spacing: -0.035em !important;
 	}
 
@@ -1409,7 +1414,7 @@ img {
 		-webkit-text-fill-color: unset !important;
 		background-clip: unset !important;
 		font-size: 2em !important;
-		margin: 0 0 0.2em 0 !important;
+		margin: 0 0 1em 0 !important;
 		letter-spacing: -0.035em !important;
 	}
 }
@@ -1424,6 +1429,7 @@ img {
 	-webkit-background-clip: unset !important;
 	-webkit-text-fill-color: unset !important;
 	background-clip: unset !important;
+	margin: 0 0 1em 0 !important;
 }
 
 /* ========================================
