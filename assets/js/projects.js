@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "Scribblz!",
-        thumbnail: "projects/scribblz/scribblz-thumbnail.png",
+        thumbnail: "projects/scribblz/scribblz-thumbnail.webp",
         page: "/projects/scribblz/",
         description: "A wall-traversing autonomous art-drawing robot",
         type: "project",
