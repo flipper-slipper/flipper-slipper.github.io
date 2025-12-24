@@ -8,7 +8,7 @@
   margin: 2rem 0;
 }
 
-/* Cartoon-Style Website Button */
+/* Cartoon-Style Website Button with Animated Border */
 .scribblz-cartoon-button {
   font-family: 'Permanent Marker', cursive;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
@@ -21,7 +21,6 @@
   box-shadow: 
     0 6px 0 #000,
     0 10px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease;
   cursor: pointer;
   display: inline-block;
   position: absolute;
@@ -31,6 +30,7 @@
   letter-spacing: 1px;
   z-index: 10;
   transform: rotate(-8deg);
+  animation: rainbowGlow 1.2s linear infinite;
 }
 
 /* Arrow icon to indicate new tab */
@@ -43,10 +43,11 @@
 }
 
 .scribblz-cartoon-button:hover {
-  transform: rotate(-8deg) translateY(3px);
+  transform: rotate(-8deg) translateY(3px) scale(1.05);
   box-shadow: 
     0 3px 0 #000,
     0 7px 15px rgba(0, 0, 0, 0.3);
+  animation: rainbowGlow 0.6s linear infinite;
 }
 
 .scribblz-cartoon-button:active {
@@ -54,6 +55,72 @@
   box-shadow: 
     0 0 0 #000,
     0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtle pulse animation */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      0 0 10px rgba(255, 107, 53, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      0 0 25px rgba(255, 107, 53, 0.8),
+      0 0 40px rgba(247, 147, 30, 0.4);
+  }
+}
+
+/* Rainbow glow traveling around the button */
+@keyframes rainbowGlow {
+  0% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      -8px -8px 25px #ff0080,
+      8px -8px 25px transparent,
+      8px 8px 25px transparent,
+      -8px 8px 25px transparent;
+  }
+  25% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      -8px -8px 25px transparent,
+      8px -8px 25px #ff8c00,
+      8px 8px 25px transparent,
+      -8px 8px 25px transparent;
+  }
+  50% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      -8px -8px 25px transparent,
+      8px -8px 25px transparent,
+      8px 8px 25px #40e0d0,
+      -8px 8px 25px transparent;
+  }
+  75% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      -8px -8px 25px transparent,
+      8px -8px 25px transparent,
+      8px 8px 25px transparent,
+      -8px 8px 25px #7b68ee;
+  }
+  100% {
+    box-shadow: 
+      0 6px 0 #000,
+      0 10px 20px rgba(0, 0, 0, 0.3),
+      -8px -8px 25px #ff0080,
+      8px -8px 25px transparent,
+      8px 8px 25px transparent,
+      -8px 8px 25px transparent;
+  }
 }
 
 /* Mobile Responsive */
@@ -67,7 +134,7 @@
   }
 
   .scribblz-cartoon-button:hover {
-    transform: translateY(3px);
+    transform: translateY(3px) scale(1.05);
   }
 
   .scribblz-cartoon-button:active {
