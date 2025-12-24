@@ -1,9 +1,9 @@
 const projects = [
     {
-        title: "Scribblz",
+        title: "Scribblz!",
         thumbnail: "projects/scribblz/scribblz-thumbnail.png",
         page: "/projects/scribblz/",
-        description: "Window climbing art robot",
+        description: "A wall-traversing autonomous art-drawing robot",
         type: "project",
     },
     {

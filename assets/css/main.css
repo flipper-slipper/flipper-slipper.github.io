@@ -573,7 +573,7 @@ label {
 
 #wrapper > * > .inner {
 	width: 100%;
-	max-width: 55em;
+	max-width: 55em !important;
 	margin: 0 auto;
 	padding: 0 2.5em;
 }
@@ -1010,24 +1010,23 @@ h2 + .projects-filter {
 /* ========================================
    PROJECT PAGE STYLES
    ======================================== */
-.project-container {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-.project-title {
-	margin: 0 0 0 0;
+.project-container h1.project-title,
+.inner.project-container h1,
+div.inner.project-container h1 {
+	margin: 0 0 0 0 !important;
 	color: #000000 !important;
+	font-weight: 500 !important;
 	background: none !important;
+	background-image: none !important;
 	-webkit-background-clip: unset !important;
-	-webkit-text-fill-color: unset !important;
+	-webkit-text-fill-color: #000000 !important;
 	background-clip: unset !important;
 }
 
 .project-subtitle {
 	font-size: 1.1rem;
 	color: #666;
-	margin: 0 0 1rem 0;
+	margin: 0 0 0.5rem 0;
 	font-style: italic;
 }
 
@@ -1035,7 +1034,7 @@ h2 + .projects-filter {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .skill-tag {
@@ -1059,7 +1058,7 @@ h2 + .projects-filter {
 	border: none;
 	height: 2px;
 	background: linear-gradient(90deg, #ff6b35, #f7931e);
-	margin: 2rem 0;
+	margin: 1rem 0;
 }
 
 .text-center {
@@ -1388,7 +1387,7 @@ img {
 		font-weight: 500 !important;
 		color: #000000 !important;
 		font-size: 2em !important;
-		margin: 0 0 1em 0 !important;
+		margin: 0 0 0.5em 0 !important;
 		letter-spacing: -0.035em !important;
 	}
 
@@ -1397,7 +1396,7 @@ img {
 		font-weight: 500 !important;
 		color: #000000 !important;
 		font-size: 2em !important;
-		margin: 0 0 1em 0 !important;
+		margin: 0 0 0.5em 0 !important;
 		letter-spacing: -0.035em !important;
 	}
 
@@ -1414,7 +1413,7 @@ img {
 		-webkit-text-fill-color: unset !important;
 		background-clip: unset !important;
 		font-size: 2em !important;
-		margin: 0 0 1em 0 !important;
+		margin: 0 0 0.5em 0 !important;
 		letter-spacing: -0.035em !important;
 	}
 }
@@ -1429,7 +1428,7 @@ img {
 	-webkit-background-clip: unset !important;
 	-webkit-text-fill-color: unset !important;
 	background-clip: unset !important;
-	margin: 0 0 1em 0 !important;
+	margin: 0 0 0.5em 0 !important;
 }
 
 /* ========================================
