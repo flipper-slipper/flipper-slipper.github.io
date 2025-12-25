@@ -90,8 +90,7 @@
 	margin: 0 0 0.15em 0;
 	font-size: 1.125rem;
 	font-weight: 600;
-	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	letter-spacing: normal;
+	line-height: 1.3;
 	opacity: 1;
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
@@ -189,7 +188,9 @@ body.is-touch .tiles article .content {
 	}
 	
 	.tiles article > a h2 {
-		font-size: 0.9rem;
+		font-size: 1rem !important;
+		letter-spacing: normal !important;
+		line-height: 1.3 !important;
 		color: #ffffff !important;
 		font-weight: 600 !important;
 		background: none !important;
@@ -220,7 +221,9 @@ body.is-touch .tiles article .content {
 	}
 	
 	.tiles article > a h2 {
-		font-size: 0.85rem;
+		font-size: 0.95rem !important;
+		letter-spacing: normal !important;
+		line-height: 1.3 !important;
 		margin-bottom: 0.15em;
 		color: #ffffff !important;
 		font-weight: 600 !important;
@@ -396,8 +399,6 @@ body.is-touch .tiles article .content {
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 	color: #222222 !important;
-	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-	letter-spacing: normal !important;
 	background: none !important;
 	-webkit-background-clip: initial !important;
 	-webkit-text-fill-color: #222222 !important;
@@ -532,8 +533,10 @@ body.is-touch .paper-tile .content {
 	}
 	
 	.paper-tile > a h2,
-	.papers-grid .paper-tile > a h2 {
-		font-size: 0.9rem !important;
+	.papers-grid .paper-tile > a h2,
+	.papers-grid article.paper-tile > a h2 {
+		font-size: 1rem !important;
+		letter-spacing: normal !important;
 	}
 	
 	.paper-tile > a .content {
@@ -561,8 +564,10 @@ body.is-touch .paper-tile .content {
 	}
 	
 	.paper-tile > a h2,
-	.papers-grid .paper-tile > a h2 {
-		font-size: 0.85rem !important;
+	.papers-grid .paper-tile > a h2,
+	.papers-grid article.paper-tile > a h2 {
+		font-size: 0.95rem !important;
+		letter-spacing: normal !important;
 		margin-bottom: 0.15em !important;
 	}
 	
