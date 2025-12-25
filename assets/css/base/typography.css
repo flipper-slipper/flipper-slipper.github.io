@@ -86,15 +86,6 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 	color: inherit;
 }
 
-/* Override gradient for paper titles */
-.papers-grid .paper-title {
-	background: none !important;
-	-webkit-background-clip: initial !important;
-	-webkit-text-fill-color: initial !important;
-	background-clip: initial !important;
-	color: #000000 !important;
-}
-
 h2 {
 	font-size: 2em;
 }
@@ -115,17 +106,12 @@ h6 {
 	font-size: 0.8em;
 }
 
-/* Override gradient for project card titles and math paper titles */
+/* Override gradient for project card titles */
 .tiles article a h2,
 .tiles article a h3,
 .tiles article a h4,
 .tiles article a h5,
-.tiles article a h6,
-.project-card h2,
-.project-card h3,
-.project-card h4,
-.project-card h5,
-.project-card h6 {
+.tiles article a h6 {
 	background: none;
 	-webkit-background-clip: initial;
 	-webkit-text-fill-color: initial;

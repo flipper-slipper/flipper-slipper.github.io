@@ -90,6 +90,8 @@
 	margin: 0 0 0.15em 0;
 	font-size: 1.125rem;
 	font-weight: 600;
+	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: normal;
 	opacity: 1;
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
@@ -143,162 +145,7 @@ body.is-touch .tiles article .content {
 	margin-top: 0.5em;
 }
 
-/* Certificates Grid */
-.certificates-grid {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.75rem;
-	position: relative;
-	margin: 0 -1em 2rem -1em;
-	padding: 1rem;
-	width: calc(100% + 2em);
-	justify-content: flex-start;
-}
-
-.certificates-grid > .project-card {
-	width: 100%;
-	margin: 0;
-	flex-shrink: 0;
-	aspect-ratio: 2/1;
-}
-
-/* Override for paper cards */
-.certificates-grid > .paper-card {
-	width: calc(50% - 0.375rem) !important;
-	aspect-ratio: unset !important;
-}
-
-/* Project Card Base Styles */
-.project-card {
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
-	border: none;
-	padding: 1em;
-	background: #ffffff;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-	transition: all 0.3s ease;
-}
-
-.project-card .card-title {
-	letter-spacing: normal;
-	text-transform: none;
-	font-size: 1em;
-}
-
-.project-card:hover {
-	border: none;
-	background-color: #696969;
-	color: #ffffff;
-	transform: none;
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.project-card:hover .card-title,
-.project-card:hover .card-description {
-	color: #ffffff !important;
-}
-
-.project-card:hover .badge {
-	color: #ffffff;
-	background-color: #696969;
-	border: 1px solid #ffffff;
-}
-
-/* Card Header */
-.card-header {
-	margin-bottom: 1rem;
-}
-
-.card-header-content {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.card-title-wrapper {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.card-title {
-	font-size: 1.125rem;
-	font-weight: 600;
-	margin: 0;
-	color: #000000;
-	background: none;
-	-webkit-background-clip: initial;
-	-webkit-text-fill-color: initial;
-	background-clip: initial;
-}
-
-.card-title a {
-	color: inherit;
-	text-decoration: none;
-}
-
-.card-title a:hover {
-	color: #f2849e;
-}
-
-.production-icon {
-	width: 16px;
-	height: 16px;
-	color: #f2849e;
-}
-
-.production-icon:hover {
-	color: #ee5f81;
-}
-
-.card-description {
-	color: #6b7280;
-	font-size: 0.875rem;
-	line-height: 1.5;
-	margin: 0;
-}
-
-.card-content {
-	margin-top: 1rem;
-}
-
-/* Tags and Badges */
-.tags-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-}
-
-.badge {
-	display: inline-flex;
-	align-items: center;
-	padding: 0 0.25rem;
-	background: transparent;
-	color: #000000;
-	border: 1px solid #000000;
-	border-radius: 4px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 0.75rem;
-	font-weight: 400;
-	text-transform: capitalize;
-	letter-spacing: normal;
-}
-
-.badge:hover {
-	transform: scale(1.05);
-	background: #000000;
-	color: #ffffff;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 1600px) {
-	.certificates-grid {
-		width: calc(100% + 2em);
-	}
-}
-
+/* Responsive Design for Tiles */
 @media screen and (max-width: 1280px) {
 	.tiles {
 		margin: 0 -0.75em 2rem -0.75em;
@@ -309,18 +156,6 @@ body.is-touch .tiles article .content {
 	
 	.tiles article > a > .image {
 		height: 180px;
-	}
-	
-	.certificates-grid {
-		margin: 0 -0.75em 2rem -0.75em;
-		padding: 0.875rem;
-		width: calc(100% + 1.5em);
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 1.25rem;
-	}
-	
-	.certificates-grid > .project-card {
-		width: 100%;
 	}
 }
 
@@ -334,18 +169,6 @@ body.is-touch .tiles article .content {
 	
 	.tiles article > a > .image {
 		height: 160px;
-	}
-	
-	.certificates-grid {
-		margin: 0 -0.75em 2rem -0.75em;
-		padding: 0.875rem;
-		width: calc(100% + 1.5em);
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 1rem;
-	}
-	
-	.certificates-grid > .project-card {
-		width: 100%;
 	}
 }
 
@@ -380,78 +203,6 @@ body.is-touch .tiles article .content {
 	}
 }
 
-/* Mobile title override to prevent blue styling */
-@media screen and (max-width: 768px) {
-	.tiles article > a h2 {
-		font-size: 0.9rem !important;
-		color: #ffffff !important;
-		font-weight: 600 !important;
-		background: none !important;
-		-webkit-background-clip: initial !important;
-		-webkit-text-fill-color: initial !important;
-		background-clip: initial !important;
-	}
-}
-	
-	.certificates-grid {
-		display: grid !important;
-		grid-template-columns: 1fr !important;
-		margin: 0 -0.5em 2rem -0.5em !important;
-		padding: 0.625rem !important;
-		gap: 1rem !important;
-	}
-	
-	/* Math paper cards - full width on mobile */
-	.certificates-grid > .project-card {
-		width: 100% !important;
-		margin: 0 !important;
-		padding: 1em !important;
-		min-height: 140px !important;
-		aspect-ratio: unset !important;
-		display: flex !important;
-		flex-direction: column !important;
-	}
-	
-	/* Reduce card height on mobile */
-	.certificates-grid > .project-card .card-header {
-		margin-bottom: 0.5rem;
-	}
-	
-	.certificates-grid > .project-card .card-title {
-		font-size: 1rem;
-		line-height: 1.2;
-		min-height: 1.2em;
-		overflow: visible;
-		white-space: normal;
-	}
-	
-	.certificates-grid > .project-card .card-description {
-		font-size: 0.8rem;
-		line-height: 1.3;
-		margin: 0.25rem 0;
-		min-height: 2.6em;
-		overflow: visible;
-		white-space: normal;
-	}
-	
-	.certificates-grid > .project-card .card-content {
-		margin-top: 0.5rem;
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-	}
-	
-	.certificates-grid > .project-card .badge {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 0.7rem;
-		font-weight: 400;
-		text-transform: capitalize;
-		letter-spacing: normal;
-		padding: 0.15rem 0.3rem;
-	}
-}
-
 @media screen and (max-width: 480px) {
 	.tiles {
 		margin: 0 -0.5em 2rem -0.5em;
@@ -483,109 +234,11 @@ body.is-touch .tiles article .content {
 		font-size: 0.75rem;
 	}
 }
-	
-	.certificates-grid {
-		display: grid !important;
-		grid-template-columns: 1fr !important;
-		margin: 0 -0.5em 2rem -0.5em !important;
-		padding: 0.375rem !important;
-		gap: 0.75rem !important;
-	}
-	
-	/* Math paper cards - full width on small mobile */
-	.certificates-grid > .project-card {
-		width: 100% !important;
-		margin: 0 !important;
-		padding: 0.8em !important;
-		min-height: 120px !important;
-		aspect-ratio: unset !important;
-		display: flex !important;
-		flex-direction: column !important;
-	}
-	
-	/* Further reduce card height on small mobile */
-	.certificates-grid > .project-card .card-header {
-		margin-bottom: 0.4rem;
-	}
-	
-	.certificates-grid > .project-card .card-title {
-		font-size: 0.95rem;
-		line-height: 1.1;
-	}
-	
-	.certificates-grid > .project-card .card-description {
-		font-size: 0.75rem;
-		line-height: 1.2;
-		margin: 0.2rem 0;
-	}
-	
-	.certificates-grid > .project-card .card-content {
-		margin-top: 0.4rem;
-	}
-	
-	.certificates-grid > .project-card .badge {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 0.65rem;
-		font-weight: 400;
-		text-transform: capitalize;
-		letter-spacing: normal;
-		padding: 0.1rem 0.25rem;
-	}
-}
 
-/* Additional mobile breakpoints for better responsiveness */
 @media screen and (max-width: 360px) {
 	.tiles {
 		padding: 0.5rem;
 		gap: 0.5rem;
-	}
-	
-	.certificates-grid {
-		display: grid !important;
-		grid-template-columns: 1fr !important;
-		margin: 0 -0.5em 2rem -0.5em !important;
-		padding: 0.5rem !important;
-		gap: 0.5rem !important;
-	}
-	
-	/* Math paper cards - full width on very small mobile */
-	.certificates-grid > .project-card {
-		width: 100% !important;
-		margin: 0 !important;
-		padding: 0.7em !important;
-		min-height: 110px !important;
-		aspect-ratio: unset !important;
-		display: flex !important;
-		flex-direction: column !important;
-	}
-	
-	/* Further reduce card height on very small mobile */
-	.certificates-grid > .project-card .card-header {
-		margin-bottom: 0.3rem;
-	}
-	
-	.certificates-grid > .project-card .card-title {
-		font-size: 0.9rem;
-		line-height: 1.1;
-	}
-	
-	.certificates-grid > .project-card .card-description {
-		font-size: 0.7rem;
-		line-height: 1.2;
-		margin: 0.15rem 0;
-	}
-	
-	.certificates-grid > .project-card .card-content {
-		margin-top: 0.3rem;
-	}
-	
-	.certificates-grid > .project-card .badge {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 0.6rem;
-		font-weight: 400;
-		text-transform: capitalize;
-		letter-spacing: normal;
-		padding: 0.08rem 0.2rem;
 	}
 }
 
@@ -593,84 +246,6 @@ body.is-touch .tiles article .content {
 	.tiles {
 		padding: 0.25rem;
 		gap: 0.25rem;
-	}
-	
-	.certificates-grid {
-		display: grid !important;
-		grid-template-columns: 1fr !important;
-		margin: 0 -0.5em 2rem -0.5em !important;
-		padding: 0.25rem !important;
-		width: calc(100% + 1em) !important;
-		gap: 0.5rem !important;
-	}
-	
-	/* Math paper cards - full width on smallest mobile */
-	.certificates-grid > .project-card {
-		width: 100% !important;
-		margin: 0 !important;
-		padding: 0.6em !important;
-		min-height: 100px !important;
-		aspect-ratio: unset !important;
-		display: flex !important;
-		flex-direction: column !important;
-	}
-	
-	/* Further reduce card height on smallest mobile */
-	.certificates-grid > .project-card .card-header {
-		margin-bottom: 0.25rem;
-	}
-	
-	.certificates-grid > .project-card .card-title {
-		font-size: 0.85rem;
-		line-height: 1.1;
-	}
-	
-	.certificates-grid > .project-card .card-description {
-		font-size: 0.65rem;
-		line-height: 1.2;
-		margin: 0.1rem 0;
-	}
-	
-	.certificates-grid > .project-card .card-content {
-		margin-top: 0.25rem;
-	}
-	
-	.certificates-grid > .project-card .badge {
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		font-size: 0.55rem;
-		font-weight: 400;
-		text-transform: capitalize;
-		letter-spacing: normal;
-		padding: 0.05rem 0.15rem;
-	}
-}
-
-/* Extra small screens for extreme zoom scenarios */
-@media screen and (max-width: 280px) {
-	.certificates-grid {
-		gap: 0.25rem !important;
-		padding: 0.125rem !important;
-	}
-	
-	.certificates-grid > .project-card {
-		padding: 0.5em !important;
-		min-height: 90px !important;
-		display: flex !important;
-		flex-direction: column !important;
-	}
-	
-	.certificates-grid > .project-card .card-title {
-		font-size: 0.9rem !important;
-		min-height: 1.1em !important;
-		overflow: visible !important;
-		white-space: normal !important;
-	}
-	
-	.certificates-grid > .project-card .card-description {
-		font-size: 0.75rem !important;
-		min-height: 2.2em !important;
-		overflow: visible !important;
-		white-space: normal !important;
 	}
 }
 
@@ -811,14 +386,23 @@ body.is-touch .tiles article .content {
 	background: #e0e0e0 !important;
 }
 
-.paper-tile > a h2 {
-	margin: 0 0 0.15em 0;
-	font-size: 1.125rem;
-	font-weight: 600;
+.paper-tile > a h2,
+.papers-grid .paper-tile > a h2,
+.papers-grid article.paper-tile > a h2 {
+	margin: 0 0 0.15em 0 !important;
+	font-size: 1.125rem !important;
+	font-weight: 600 !important;
 	opacity: 1;
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 	color: #222222 !important;
+	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	letter-spacing: normal !important;
+	background: none !important;
+	-webkit-background-clip: initial !important;
+	-webkit-text-fill-color: #222222 !important;
+	background-clip: initial !important;
+	line-height: 1.3 !important;
 }
 
 .paper-tile > a .content {
@@ -947,8 +531,9 @@ body.is-touch .paper-tile .content {
 		padding: 0.4em 0.6em 0.6em 0.6em;
 	}
 	
-	.paper-tile > a h2 {
-		font-size: 0.9rem;
+	.paper-tile > a h2,
+	.papers-grid .paper-tile > a h2 {
+		font-size: 0.9rem !important;
 	}
 	
 	.paper-tile > a .content {
@@ -975,22 +560,13 @@ body.is-touch .paper-tile .content {
 		padding: 0.3em 0.4em 0.4em 0.4em;
 	}
 	
-	.paper-tile > a h2 {
-		font-size: 0.85rem;
-		margin-bottom: 0.15em;
+	.paper-tile > a h2,
+	.papers-grid .paper-tile > a h2 {
+		font-size: 0.85rem !important;
+		margin-bottom: 0.15em !important;
 	}
 	
 	.paper-tile > a .content {
 		font-size: 0.75rem;
-	}
-}
-
-/* Print styles */
-@media print {
-	.certificates-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 0.5rem;
-		max-width: 100%;
 	}
 }
