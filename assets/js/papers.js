@@ -44,36 +44,36 @@ const papers = [
 
 
 function createCard(paper) {
-    const productionIcon = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="production-icon" viewBox="0 0 16 16">
-            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-        </svg>`;
+    const ribbonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="award-icon"><path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z"/><path d="M12 14c-3.859 0-7-3.141-7-7S8.141 0 12 0s7 3.141 7 7-3.141 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"/><path d="M8.5 13L6 24l6-3 6 3-2.5-11h-2.1l1.3 5.7L12 18l-2.7 1.7L10.6 13z"/></svg>`;
+    
+    const awardsHtml = paper.tags.length > 0 
+        ? `<div class="paper-awards">${paper.tags.map(tag => `<span class="paper-award-badge">${ribbonIcon}${tag}</span>`).join('')}</div>`
+        : '';
 
     return `
-        <div class="paper-card" onclick="window.open('${paper.url}', '_blank')">
-            <div class="paper-thumbnail">
-                <img src="${paper.thumbnail}" alt="${paper.title}" />
-            </div>
-            <div class="paper-content">
-                <div class="paper-header">
-                    <h3 class="paper-title">
-                        ${paper.title}
-                        ${paper.hasProductionIcon ? productionIcon : ''}
-                    </h3>
-                    <p class="paper-description">${paper.description}</p>
+        <article class="paper-tile">
+            <a href="${paper.url}" target="_blank" rel="noopener noreferrer">
+                <div class="paper-image-area">
+                    <span class="image">
+                        <img src="${paper.thumbnail}" alt="${paper.title}" />
+                    </span>
+                    ${awardsHtml}
                 </div>
-                <div class="paper-tags">
-                    ${paper.tags.map(tag => `<span class="paper-badge">${tag}</span>`).join('')}
+                <div class="text-content">
+                    <h2>${paper.title}</h2>
+                    <div class="content">
+                        <p>${paper.description}</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </a>
+        </article>
     `;
 }
 
 // Finally, your render function and event listener
 function renderPapers() {
     const container = document.getElementById('papers-grid');
-    container.className = 'papers-grid'; // Add specific class for papers
+    container.className = 'papers-grid'; // Use papers-grid only, not tiles
     container.innerHTML = papers.map(paper => createCard(paper)).join('');
 }
 
