@@ -713,13 +713,12 @@ h2 + .projects-filter {
 	height: 42px;
 	color: #333;
 	background-color: #f8f9fa;
-	border: 1px solid #ddd;
+	border: 1px solid #aaa;
 	border-radius: 8px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.3s ease;
-	border-bottom: none !important;
+	transition: all 0.2s ease;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
@@ -732,22 +731,34 @@ h2 + .projects-filter {
 }
 
 .social-button:hover {
-	opacity: 0.8;
-	transform: translateY(-2px);
-	background-color: #fff;
-	border-color: #ccc;
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	background-color: #333;
+	color: #fff !important;
+	border-color: #333;
+}
+
+.social-button:hover i {
+	color: #fff !important;
 }
 
 .social-button.resume {
-	background: linear-gradient(135deg, #b35c00 0%, #ff9a3c 50%, #ffd18f 100%);
+	background: #e67e22;
 	color: white;
 	font-weight: 700;
 	padding: 0 20px;
 	height: 42px;
 	font-size: 0.9em;
-	border: none;
-	box-shadow: 0 4px 10px rgba(255, 154, 60, 0.3);
+	border: 1px solid #d35400;
+	box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+}
+
+.social-button.resume:hover {
+	background-color: #fff;
+	color: #e67e22 !important;
+	border-color: #e67e22;
+}
+
+.social-button.resume:hover i {
+	color: #e67e22 !important;
 }
 
 .social-button.resume i {
