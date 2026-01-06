@@ -701,22 +701,30 @@ h2 + .projects-filter {
    SOCIAL MEDIA BUTTONS
    ======================================== */
 .social-buttons {
-	margin: 1rem 0 3rem 0;
+	margin: 1.5rem 0 1.5rem 0;
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
 }
 
 .social-button {
 	text-decoration: none;
-	padding: 8px 10px;
-	color: white;
-	border-radius: 5px;
+	padding: 0 14px;
+	height: 42px;
+	color: #333;
+	background-color: #f8f9fa;
+	border: 1px solid #ddd;
+	border-radius: 8px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	transition: opacity 0.3s ease;
+	transition: all 0.3s ease;
+	border-bottom: none !important;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .social-button i {
-	font-size: 22px;
+	font-size: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -725,18 +733,38 @@ h2 + .projects-filter {
 
 .social-button:hover {
 	opacity: 0.8;
+	transform: translateY(-2px);
+	background-color: #fff;
+	border-color: #ccc;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.social-button.linkedin {
-	background-color: #0077B5;
+.social-button.resume {
+	background: linear-gradient(135deg, #b35c00 0%, #ff9a3c 50%, #ffd18f 100%);
+	color: white;
+	font-weight: 700;
+	padding: 0 20px;
+	height: 42px;
+	font-size: 0.9em;
+	border: none;
+	box-shadow: 0 4px 10px rgba(255, 154, 60, 0.3);
 }
 
-.social-button.email {
-	background-color: #EA4335;
+.social-button.resume i {
+	margin-right: 8px;
+	color: white;
 }
 
-.social-button.github {
-	background-color: #333;
+.social-button.linkedin i {
+	color: #0077B5;
+}
+
+.social-button.email i {
+	color: #EA4335;
+}
+
+.social-button.github i {
+	color: #333;
 }
 
 /* ========================================
@@ -765,13 +793,13 @@ h2 + .projects-filter {
 	margin: 0.125rem 0;
 	font-size: 0.85em;
 	font-family: inherit;
-	font-weight: 400;
-	color: #333;
+	font-weight: 500;
+	color: #555;
 }
 
 .location i {
-	margin-right: 2px;
-	color: #2196F3;
+	margin-right: 5px;
+	color: #777;
 }
 
 .location,
@@ -825,6 +853,8 @@ h2 + .projects-filter {
 /* Tighter spacing between name and education/location */
 #intro h1 {
 	margin-bottom: 0.2rem;
+	font-size: 2.5em;
+	line-height: 1.1;
 }
 
 #intro h1,
