@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Inverse Pendulum</title>
+		<link rel="icon" href="/logo.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<!-- Optionally remove scribblz-minimal if it's very specific, but we'll leave basic template CSS -->
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Header content injected via JS -->
+						</div>
+					</header>
+
+				<!-- Navigation will be injected by navigation.js -->
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner project-container">
+							<h1 class="project-title">Balancing Inverse Pendulum</h1>
+							<p class="project-subtitle">Programming an inverse pendulum robot to self balance using differential equations.</p>
+							<div class="skills-container">
+								<span class="skill-tag">MATLAB</span>
+								<span class="skill-tag">Simulink</span>
+								<span class="skill-tag">Arduino</span>
+								<span class="skill-tag">Controls</span>
+							</div>
+							
+							<hr class="project-divider">
+
+							<style>
+								.split-section {
+									display: flex;
+									flex-wrap: wrap; /* Ensures elements stack on smaller screens */
+									gap: 2em;
+									margin-bottom: 4em;
+									align-items: flex-start;
+								}
+								.split-text {
+									flex: 1 1 300px;
+								}
+								.split-media {
+									flex: 1 1 400px;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									margin: 0;
+								}
+								.video-container {
+									position: relative;
+									width: 100%;
+									max-width: 320px; /* Perfect Instagram Reel width */
+									height: 570px;    /* Fixed tall height */
+									border-radius: 18px; /* Smooth rounded corners like Insta */
+									overflow: hidden;
+									box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+									background: #0f0f0f;
+									/* Force a hard crop wrapper to slice off YouTube's messy injected margins */
+								}
+								.video-container iframe {
+									position: absolute;
+									border: none;
+									display: block;
+									/* Hard scale crop to remove YouTube's forced blurry wings and standard clutter */
+									top: -5%;
+									left: -12%;
+									width: 124%;
+									height: 110%;
+								}
+								.pdf-container iframe {
+									width: 100%;
+									height: 100%;
+									border: none;
+									border-radius: 8px;
+									box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+								}
+								.pdf-container {
+									width: 100%;
+									height: 600px;
+								}
+							</style>
+							
+							<!-- Video Section -->
+							<div class="split-section">
+								<div class="split-text">
+									<h2>About</h2>
+									<p>
+										The goal of this project was to program an inverse pendulum robot to self-balance using a combination of control theory and ordinary differential equations. 
+									</p>
+								</div>
+								<div class="split-media">
+									<div class="video-container">
+										<iframe src="https://www.youtube.com/embed/8q3cp3xEcFg?autoplay=1&mute=1&loop=1&playlist=8q3cp3xEcFg&controls=0&modestbranding=1&rel=0&playsinline=1" title="Inverse Pendulum Balancing Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+
+							<!-- PDF Section -->
+							<div class="split-section">
+								<div class="split-text">
+									<h2>Documentation</h2>
+									<p>
+										The detailed mathematical work and processes are provided here in our project documentation. We cover an overview of the project, modeling the system with 3 and 5 poles, calculating the poles, and simulating the response with Simulink.
+									</p>
+									<p style="margin-top: 1.5em;">
+										<a href="rocky_project.pdf" class="button" target="_blank" rel="noopener noreferrer">Open PDF in New Tab</a>
+									</p>
+								</div>
+								<div class="split-media">
+									<div class="pdf-container">
+										<iframe src="rocky_project.pdf" title="Project Documentation"></iframe>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<footer id="footer">
+					<!-- Footer content will be injected by footer.js -->
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/browser.min.js"></script>
+		<script src="../../assets/js/breakpoints.min.js"></script>
+		<script src="../../assets/js/util.js"></script>
+		<script src="../../assets/js/main.js"></script>
+		<script src="../../assets/js/navigation.js"></script>
+		<script src="../../assets/js/footer.js"></script>
+		<script src="../../assets/js/header.js"></script>
+	</body>
+</html>

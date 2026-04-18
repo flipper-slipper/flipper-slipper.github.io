@@ -7,6 +7,13 @@ const projects = [
         type: "project",
     },
     {
+        title: "Balancing Inverse Pendulum",
+        thumbnail: "projects/inverse_pendulum/rocky_thumbnail.png",
+        page: "/projects/inverse_pendulum/",
+        description: "Control theory project",
+        type: "project",
+    },
+    {
         title: "ReviMo @ Mass Robotics",
         thumbnail: "projects/revimo/pic01.png",
         page: "/projects/revimo/",
