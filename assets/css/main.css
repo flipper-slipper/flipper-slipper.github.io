@@ -741,29 +741,26 @@ h2 + .projects-filter {
 }
 
 .social-button.resume {
-	background: #e67e22;
-	color: white;
-	font-weight: 700;
+	color: #333 !important;
+	font-family: "Comptita", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
 	padding: 0 20px;
-	height: 42px;
 	font-size: 0.9em;
-	border: 1px solid #d35400;
-	box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
 }
 
 .social-button.resume:hover {
-	background-color: #fff;
-	color: #e67e22 !important;
-	border-color: #e67e22;
+	background-color: #333;
+	color: #fff !important;
+	border-color: #333;
 }
 
 .social-button.resume:hover i {
-	color: #e67e22 !important;
+	color: #ff9a3c !important;
 }
 
 .social-button.resume i {
 	margin-right: 8px;
-	color: white;
+	color: #ff9a3c !important;
 }
 
 .social-button.linkedin i {

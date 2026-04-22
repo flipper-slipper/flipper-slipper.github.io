@@ -3,7 +3,7 @@
 
 const footerContent = `
 	<div class="inner">
-		<p class="footer-text">&copy; 2025 David Barsoum, <a href="mailto:dbarsoum@olin.edu">dbarsoum@olin.edu</a></p>
+		<p class="footer-text">&copy; 2026 David Barsoum, <a href="mailto:dbarsoum@olin.edu">dbarsoum@olin.edu</a></p>
 	</div>
 `;
 

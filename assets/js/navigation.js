@@ -61,6 +61,11 @@ const PROJECT_DATA = {
         title: 'UMass Memorial Navigation App',
         subtitle: 'Spring 2025, Mobile App Development',
         skills: ['Flutter', 'Firestore', 'Mobile Development']
+    },
+    'inverse_pendulum': {
+        title: 'Balancing Inverse Pendulum',
+        subtitle: 'Spring 2026, Programming an inverse pendulum robot to self balance using differential equations.',
+        skills: ['MATLAB', 'Simulink', 'Arduino', 'Controls']
     }
 };
 
