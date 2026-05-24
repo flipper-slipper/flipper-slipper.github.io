@@ -1,3 +1,11 @@
+/* Header text */
+.project-container h1.project-title,
+.inner.project-container h1 {
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+
 /* Scribblz Cartoon Button Overlay */
 /* Import Permanent Marker Font for button */
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');

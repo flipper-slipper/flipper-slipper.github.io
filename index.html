@@ -37,6 +37,19 @@
 </head>
 
 <body>
+
+	<!-- Fixed Navigation Bar -->
+	<nav id="top-nav">
+		<div class="nav-inner">
+			<ul class="nav-links">
+				<li><a href="#about" class="nav-link">About</a></li>
+				<li><a href="#projects" class="nav-link">Projects</a></li>
+				<li><a href="#papers" class="nav-link">Math Papers</a></li>
+				<li><a href="#mini-projects" class="nav-link">Mini Projects</a></li>
+			</ul>
+		</div>
+	</nav>
+
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -69,6 +82,7 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
+				<div id="about" style="position:relative;top:-60px;visibility:hidden;height:0;"></div>
 				<header id="intro">
 					<div class="text-content">
 						<h1>David Barsoum</h1>
@@ -142,6 +156,14 @@
 			</div>
 		</section>
 
+		<!-- Mini Projects Section -->
+		<section class="mini-projects-section" id="mini-projects">
+			<div class="inner">
+				<h2>Mini Projects</h2>
+				<div class="mini-projects-grid" id="mini-projects-grid"></div>
+			</div>
+		</section>
+
 		<!-- Simple Footer -->
 		<footer id="footer">
 			<div class="inner">
@@ -162,6 +184,7 @@
 
 	<script src="/assets/js/papers.js"></script>
 	<script src="/assets/js/projects.js"></script>
+	<script src="/assets/js/mini-projects.js"></script>
         <script>
             // Progress Indicator
             function initProgressIndicator() {
@@ -273,6 +296,54 @@
             
             // Reorder on window resize
             window.addEventListener('resize', fixMobileLayout);
+        </script>
+
+        <script>
+            // Navbar smooth scroll + active link highlighting
+            (function () {
+                var navLinks = document.querySelectorAll('#top-nav .nav-link');
+                var sections = [
+                    { id: 'about',         el: null },
+                    { id: 'projects',      el: null },
+                    { id: 'papers',        el: null },
+                    { id: 'mini-projects', el: null }
+                ];
+
+                // Resolve elements after DOM ready
+                document.addEventListener('DOMContentLoaded', function () {
+                    sections.forEach(function (s) { s.el = document.getElementById(s.id); });
+
+                    // Smooth scroll on click
+                    navLinks.forEach(function (link) {
+                        link.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            var targetId = this.getAttribute('href').replace('#', '');
+                            var target = document.getElementById(targetId);
+                            if (target) {
+                                window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+                            }
+                        });
+                    });
+
+                    // Highlight active section on scroll
+                    function updateActiveLink() {
+                        var scrollY = window.scrollY + 80;
+                        var active = sections[0].id;
+                        sections.forEach(function (s) {
+                            if (s.el && s.el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+                                active = s.id;
+                            }
+                        });
+                        navLinks.forEach(function (link) {
+                            var href = link.getAttribute('href').replace('#', '');
+                            link.classList.toggle('active', href === active);
+                        });
+                    }
+
+                    window.addEventListener('scroll', updateActiveLink, { passive: true });
+                    updateActiveLink();
+                });
+            })();
         </script>
 
 </body>

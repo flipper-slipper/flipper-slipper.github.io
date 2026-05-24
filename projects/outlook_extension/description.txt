@@ -1,0 +1,3 @@
+I was fed up with Outlook's poor blue hyperlinking to detect events. It usually misses part of the event like the time, date. Further, it can't even determine a proper title, event description, or location. If there are multiple events mentioned in an email, you're definitely cooked. 
+
+I used Claude Code to create an extension that detects all the events in your email and gives you the option to add it to your outlook calendar. 
